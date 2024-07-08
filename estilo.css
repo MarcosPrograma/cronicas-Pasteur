@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------ TODO ------------------------ */
+.escena-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+html {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #E0FBE2;
+  font-family: "Montserrat", sans-serif;
+  font-size: auto;
+  font-weight: weight;
+  font-style: normal;
+  overflow: hidden;
+}
+
+h1 {
+  display: flex;
+  position: absolute;
+  color: #1E1E1E;
+}
+
+h2 {
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+  color: #1E1E1E;
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1E1E1E;
+}
+
+p {
+  text-decoration: none;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: normal;
+  color: #1E1E1E;
+}
+
+/* ------------------------ Barra de navegación ------------------------ */
+
+header {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 2%;
+  top: 1rem;
+}
+
+.header-title {
+  font-size: 1.3rem;
+  margin-left: 4rem;
+}
+
+.nav {
+  position: absolute;
+  top: 1.5rem;
+  right: 4%;
+}
+
+.nav-list {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #1E1E1E;
+  cursor: pointer;
+}
+
+.nav-list li a:hover {
+  color: #739072;
+}
+
+/* ------------------------ Menu desplegable ------------------------ */
+#panel_menu {
+  position: absolute;
+  width: 30%;
+  height: 100vh;
+  background-color: #ECE3CE;
+  right: -30%;
+  transition: right 0.3s ease;
+}
+
+#panel_menu h2 {
+  padding-left: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.cerrar {
+  padding: 1rem 1rem;
+  cursor: pointer;
+  float: right;
+}
+
+.abrir {
+  cursor: pointer;
+}
+
+.panel_menu_opciones {
+  width: fit-content;
+  text-align: left;
+  position: absolute;
+}
+
+.panel_menu_opciones_botones {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1.5rem;
+
+}
+
+.panel_menu_opciones_botones button {
+  background-color: #4F6F52;
+  color: #F1F1F1;
+  width: 100;
+  border-radius: 40px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  padding: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.panel_menu_opciones_botones button:hover {
+  background-color: #739072;
+}
+
+#panel_menu.mostrar {
+  right: 0;
+}
+
+/* ------------------------ Pestanas desplegables ------------------------  */
+.panelDesplegable {
+  position: absolute;
+  width: 40%;
+  height: 100vh;
+  background-color: #ECE3CE;
+  left: -40%;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.panelDesplegable.mostrar {
+  left: 0;
+}
+
+.panelDesplegable h2 {
+  padding: 1rem;
+}
+
+.panelDesplegable p {
+  margin-left: 1.2rem;
+  margin-right: 2rem;
+  padding: 0;
+  padding-top: 1rem;
+}
+
+/* Carrusel */
+
+/* Puntos de interes*/

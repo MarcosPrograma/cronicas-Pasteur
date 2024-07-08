@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Crónicas de Pasteur</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <!-- ------------------------ Canvas ------------------------ -->
+  <div class="escena">
+    <canvas class="escena-canvas"></canvas>
+  </div>
+
+  <!-- ------------------------ Loguito ------------------------ -->
+  <header>
+    <img src="src/img/logo.png" alt="Logo de Crónicas de Pasteur">
+    <h1 class="header-title">Crónicas de Pasteur</h1>
+  </header>
+
+  <!-- ------------------------ Barra de navegacion ------------------------ -->
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="#">Controles</a></li>
+      <li><a class="abrir" href="#">Menú</a></li>
+    </ul>
+  </nav>
+
+  <!-- ------------------------ Menú ------------------------ -->
+  <div id="panel_menu" class="">
+    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+    <h2>Localidad de Pasteur</h2>
+    <div class="panel_menu_opciones">
+      <div class="panel_menu_opciones_botones">
+        <button class="abrir" data-target="panel1">1. Manuel Antonio García Meijón</button>
+        <button class="abrir" data-target="panel2">2. Parroquia Nuestra Señora del Carmen</button>
+        <button class="abrir" data-target="panel3">3. Dr. Raúl Cabaleiro</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------------ Panel desplegables ------------------------ -->
+  <div id="panel1" class="panelDesplegable">
+    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+    <h2>Manuel Antonio García Meijón</h2>
+    <p>Nació el 5 de abril de 1856 en un pueblo de Cotobad, Pontevedra, Galicia, España. Sus padres fueron José García y
+      María Meijón. Arribó a nuestro país en 1874 y comenzó a trabajar en una despensa de la ciudad de Junín, así como
+      también lo hizo en las ciudades de San Antonio de Areco y San Andrés de Giles. En 1882 se estableció en Lincoln y
+      creó su cadena de almacenes, llamada "El Sol de Mayo", la cual trasladó a las distintas localidades que fundó,
+      entre ellas Arenaza (1904), Martínez de Hoz (1904), Bermúdez (1909), El Triunfo (1909), Pasteur (1909) y Roberts
+      (1916).</p>
+    <p>Asimismo, fue uno de los socios fundadores de la Sociedad Española de Socorros Mutuos (1884), la Biblioteca
+      Escolar Popular Pestalozzi (1889) y el Banco Popular de Lincoln (1903). Propietario de grandes extensiones de
+      campo, se interesó por el progreso de la región, y su gestión hizo posible la construcción de la línea ferroviaria
+      de Los Toldos a Ingeniero Luiggi, que pasaba por varias localidades de Lincoln. También se dedicó a la compra y
+      venta de cereales en varias zonas del país, e incluso realizó experimentos con semillas que importaba desde
+      Europa, por lo que a su campo lo llamó "La Experimental".</p>
+    <p>Quebrado económicamente a causa de la sequía en 1911 y las inundaciones de 1912 a 1914, se instaló en Pasteur,
+      donde pasó sus últimos años de vida. Enfermó gravemente y falleció en el Hospital Español a los 86 años en Buenos
+      Aires, el 6 de agosto de 1942. Sus restos descansan en el Cementerio de Lincoln, en el Panteón de la Sociedad
+      Española de Socorros Mutuos.</p>
+  </div>
+
+  <div id="panel2" class="panelDesplegable">
+    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+    <h2>Parroquia Nuestra Señora del Carmen</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper diam nulla, eget faucibus magna
+      facilisis ut. </p>
+  </div>
+
+  <div id="panel3" class="panelDesplegable">
+    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+    <h2>Dr. Raúl A. Cabaleiro</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper diam nulla, eget faucibus magna
+      facilisis ut. </p>
+  </div>
+
+  <!-- ------------------------ Footer ------------------------ -->
+
+  <!-- ------------------------ Script ------------------------ -->
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
