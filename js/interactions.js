@@ -1,3 +1,5 @@
+
+//----------- Paneles ------------
 export function interacciones() {
     document.addEventListener('DOMContentLoaded', function () {
         const abrir = document.querySelectorAll('.abrir');
@@ -49,6 +51,46 @@ export function interacciones() {
                     panel_menu.classList.remove('mostrar');
                 }
             });
+        });
+    });
+}
+
+//----------- Carrusel ------------
+export function iniciarCarrusel(){
+    document.querySelectorAll('.carrusel').forEach(carrusel => {
+        const imagenes = carrusel.querySelector('.carrusel-imagenes');
+        const imagen = carrusel.querySelectorAll('.carrusel-imagen');
+        const siguiente = carrusel.querySelector('.carrusel-bot-sig');
+        const anterior = carrusel.querySelector('.carrusel-bot-ant');
+        let indice = 0;
+        
+
+        function mostrarImagen(indice){
+            const width = imagen[0].clientWidth;
+            imagenes.style.transform = `translateX(${-indice * width}px)`;
+        }
+
+        function mostrarSiguienteImagen(){
+            indice = (indice + 1) % imagen.length;
+            mostrarImagen(indice);
+        }
+
+        let cambioAutomatico = setInterval(mostrarSiguienteImagen, 3000);
+
+        function resetTiempo(){
+            clearInterval(cambioAutomatico);
+            cambioAutomatico = setInterval(mostrarSiguienteImagen, 3000);
+        }
+
+        siguiente.addEventListener('click', () => {
+            mostrarSiguienteImagen();
+            resetTiempo();
+        });
+
+        anterior.addEventListener('click', () => {
+            indice = (indice - 1 + imagen.length) % imagen.length;
+            mostrarImagen(indice);
+            resetTiempo();
         });
     });
 }

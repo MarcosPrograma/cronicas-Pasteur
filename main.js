@@ -6,7 +6,7 @@ import { setearCamera } from "./js/camera.js"
 import { setearControles, setearRaycaster } from "./js/controls.js";
 import { cargarModelo } from "./js/loader.js";
 import { setearLuces } from "./js/light.js";
-import { interacciones } from './js/interactions.js';
+import { interacciones, iniciarCarrusel } from './js/interactions.js';
 
 //Camara
 const camera = setearCamera();
@@ -39,6 +39,7 @@ setearRaycaster(camera, scene);
 
 //Interaccion
 interacciones();
+iniciarCarrusel();
 
 //Update
 function animate() {
