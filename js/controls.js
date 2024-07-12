@@ -11,7 +11,7 @@ export function setearRaycaster(camera, scene) {
 
         raycaster.setFromCamera(mouse, camera);
 
-        const intersects = raycaster.intersectObjects(scene.children);
+        const intersects = raycaster.intersectObjects(scene.children, true);
 
         if (intersects.length > 0) {
             const object = intersects[0].object;
@@ -20,19 +20,14 @@ export function setearRaycaster(camera, scene) {
 
             //si hay un panel abierto, se debe cerrar el otro 
             if (panel) {
-                const panelesAbiertos = document.querySelectorAll('.panelDesplegable');
-                panelesAbiertos.forEach(panelAbierto => {
-                    if (panelAbierto !== panel){
-                        panelAbierto.classList.remove('mostrar');
-                    }
-                });
-                panel.classList.toggle('mostrar');
+                document.querySelectorAll('.panelDesplegable').forEach(p => p.classList.remove('mostrar'));
+                panel.classList.add('mostrar');
             }
         }
     }
-
     window.addEventListener('click', onMouseClick);
 }
+
 
 export function setearControles(camera, renderer){
     const controls = new OrbitControls(camera, renderer.domElement);
