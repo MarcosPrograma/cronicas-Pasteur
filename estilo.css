@@ -98,7 +98,7 @@ p {
   display: block;
 }
 
-.siguiente-step, .final-step{
+.siguiente-step, .final-step, .cierreStepper{
   background: #4F6F52;
   color: #F1F1F1;
   border: none;
@@ -112,7 +112,7 @@ p {
   margin-top: 1rem;
 }
 
-.siguiente-step:hover, .final-step:hover{
+.siguiente-step:hover, .final-step:hover, .cierreStepper:hover{
   background: #739072;
 }
 

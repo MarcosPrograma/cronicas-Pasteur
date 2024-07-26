@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Crónicas de Pasteur</title>
+  <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="src/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="estilo.css">
 </head>
 
@@ -33,8 +35,10 @@
       <div class="step activo" data-step="1">
         <h2>¡Bienvenidos a Crónicas de Pasteur!</h2>
         <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
-        <p><br><b>Pasteur</b> es una localidad perteneciente al partido de Lincoln y está ubicada al noroeste de la provincia de
-          Buenos Aires. Fue fundada en 1909 por el comerciante español Manuel Antonio García Meijón y se posiciona como la tercera
+        <p><br><b>Pasteur</b> es una localidad perteneciente al partido de Lincoln y está ubicada al noroeste de la
+          provincia de
+          Buenos Aires. Fue fundada en 1909 por el comerciante español Manuel Antonio García Meijón y se posiciona como
+          la tercera
           localidad en importancia por número de habitantes dentro del partido.<br>
           <br>Los orígenes del nombre se remontan a una tarde de verano donde se hallaban tres amigos por zonas aledañas
           a
@@ -42,6 +46,7 @@
           decidió que se llamaría Pasteur por el biólogo y químico francés, Louis Pasteur (1822-1898).
         </p>
         <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
+        <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
       </div>
       <div class="step" data-step="2">
         <h2>Cómo moverse en el entorno</h2>
@@ -51,6 +56,7 @@
         <p><b>Presionando clic izquierdo:</b> Rotación de la cámara</p>
         <p><b>Rueda del ratón:</b> Zoom de la cámara</p>
         <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
+        <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
       </div>
       <div class="step" data-step="3">
         <h2>Cómo interactuar en el entorno</h2>
@@ -62,6 +68,7 @@
           Se desplegará sobre el lado derecho un panel con información sobre su fundación o biografía, fotos históricas
           o contenido relacionado. </p>
         <button class="final-step" onclick="terminarPaso()">Siguiente</button>
+        <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
       </div>
     </div>
   </div>
@@ -296,6 +303,42 @@
       Franco.<br>
     </p>
     <a href="https://youtu.be/U2LlW4N5Y7Q"><button>Ver película</button></a>
+  </div>
+
+  <div id="panel6" class="panelDesplegable">
+    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+    <div class="carrusel">
+      <div class="carrusel-imagenes">
+        <img src="src/img/festival1.jpg" alt="Predio del festival desde el lateral" class="carrusel-imagen">
+        <img src="src/img/festival2.jpg" alt="Predio del festival desde el frente" class="carrusel-imagen">
+        <img src="src/img/festival3.jpg" alt="Desfile de emprendados" class="carrusel-imagen">
+        <img src="src/img/festival4.jpg" alt="Inicio del desfile de emprendados" class="carrusel-imagen">
+      </div>
+      <div>
+        <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
+        <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
+      </div>
+    </div>
+    <h2>Festival Nacional de Folklore de Pasteur</h2>
+    <p><br>El Festival Nacional de Folklore de Pasteur, también conocido popularmente como "Festival de la Amistad",
+      nació en 1993 con el objetivo de mantener vivo el canto, la música y la danza de la región, por una comisión
+      formada durante 1992. Este evento crea un punto de encuentro e intercambio cultural entre localidades y ciudades
+      de todo el país, fomentando sentimientos de libertad, solidaridad, respeto y convivencia.<br>
+      <br>En el festival se entregan premios a los bailarines en diversas categorías: materna-infantil, malambo
+      infantil, solista y conjunto de malambo, y pareja estilizada y tradicional. Los primeros cuatro festivales se
+      llevaron a cabo en el estadio del Club Atlético Pasteur y Ferro Carril Oeste (1993, 1994, 1995 y 1996).
+      Posteriormente, se trasladó a un predio especial con infraestructura propia, donde se celebró hasta 2023.<br>
+      <br>Cada año, durante cuatro días, el festival reúne a grandes artistas locales y nacionales. Entre los artistas
+      que han participado se encuentran Los Nocheros, El Chaqueño Palavecino, Los Chalchaleros, Tamara Castro, Luciano
+      Pereyra, Horacio Guarany, Peteco Carabajal, Argentino Luna, entre otros de renombre. Además, delegaciones compiten
+      en los rubros de danza y canto.
+      <br>El festejo también incluye un desfile de emprendados, carruajes, maquinarias agrícolas y delegaciones de
+      instituciones invitadas. Asimismo, se organiza en paralelo una feria artesanal que atrae a muchos visitantes para
+      apreciar este evento. <br>
+    </p>
+    <a href="mailto:elcorreoquequieres@correo.com"><button>Contactar por correo</button></a>
+    <a href="mailto:elcorreoquequieres@correo.com"><button>Contactar por correo</button></a>
+    <a href="mailto:elcorreoquequieres@correo.com"><button>Contactar por correo</button></a>
   </div>
 
   <!-- ------------------------ Footer ------------------------ -->

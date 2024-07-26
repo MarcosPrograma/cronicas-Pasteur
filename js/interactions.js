@@ -118,6 +118,10 @@ export function stepper(){
         boton.addEventListener('click', pasoSiguiente);
     });
 
+    document.querySelectorAll('.cierreStepper').forEach(boton => {
+        boton.addEventListener('click', terminarPaso);
+    });
+
     document.querySelector('.final-step').addEventListener('click', terminarPaso);
     document.querySelector('.step[data-step="1"]').classList.add('activo');
 }
