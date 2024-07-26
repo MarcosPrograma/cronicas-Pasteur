@@ -27,6 +27,45 @@
     </ul>
   </nav>
 
+  <!-- ------------------------ Stepper ------------------------ -->
+  <div id="stepper-overlay">
+    <div class="stepper">
+      <div class="step activo" data-step="1">
+        <h2>¡Bienvenidos a Crónicas de Pasteur!</h2>
+        <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
+        <p><br><b>Pasteur</b> es una localidad perteneciente al partido de Lincoln y está ubicada al noroeste de la provincia de
+          Buenos Aires. Fue fundada en 1909 por el comerciante español Manuel Antonio García Meijón y se posiciona como la tercera
+          localidad en importancia por número de habitantes dentro del partido.<br>
+          <br>Los orígenes del nombre se remontan a una tarde de verano donde se hallaban tres amigos por zonas aledañas
+          a
+          una estancia. Al observar algunas de las pocas casas levantas en la lejanía, comenzaron a barajar nombres. Se
+          decidió que se llamaría Pasteur por el biólogo y químico francés, Louis Pasteur (1822-1898).
+        </p>
+        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
+      </div>
+      <div class="step" data-step="2">
+        <h2>Cómo moverse en el entorno</h2>
+        <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
+        <p><br><b>Controles</b></p>
+        <p><br><b>Clic izquierdo:</b> Seleccionar elemento o punto de interés</p>
+        <p><b>Presionando clic izquierdo:</b> Rotación de la cámara</p>
+        <p><b>Rueda del ratón:</b> Zoom de la cámara</p>
+        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
+      </div>
+      <div class="step" data-step="3">
+        <h2>Cómo interactuar en el entorno</h2>
+        <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
+        <p><br><b>Interacción</b></p>
+        <p><br>Dentro del entorno existen varios puntos y elementos interactuables, desde instituciones hasta personas.
+          Podrás seleccionar alguno de ellos y clicarlo con el botón izquierdo del ratón para mostrar información sobre
+          el mismo.
+          Se desplegará sobre el lado derecho un panel con información sobre su fundación o biografía, fotos históricas
+          o contenido relacionado. </p>
+        <button class="final-step" onclick="terminarPaso()">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ------------------------ Menú ------------------------ -->
   <div id="panel_menu" class="">
     <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
@@ -210,10 +249,14 @@
     <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
     <div class="carrusel">
       <div class="carrusel-imagenes">
-        <img src="src/img/mariaHerminia_Jugemos1.jpg" alt="Fotografía de Maria Herminia Avellaneda" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos2.jpg" alt="Fotografía de Maria Herminia Avellaneda" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos3.jpg" alt="Fotografía de Maria Herminia Avellaneda" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos4.jpg" alt="Maria Herminia Avellaneda y Maria Elena Walsh en la plaza central" class="carrusel-imagen">
+        <img src="src/img/mariaHerminia_Jugemos1.jpg" alt="Fotografía de Maria Herminia Avellaneda"
+          class="carrusel-imagen">
+        <img src="src/img/mariaHerminia_Jugemos2.jpg" alt="Fotografía de Maria Herminia Avellaneda"
+          class="carrusel-imagen">
+        <img src="src/img/mariaHerminia_Jugemos3.jpg" alt="Fotografía de Maria Herminia Avellaneda"
+          class="carrusel-imagen">
+        <img src="src/img/mariaHerminia_Jugemos4.jpg"
+          alt="Maria Herminia Avellaneda y Maria Elena Walsh en la plaza central" class="carrusel-imagen">
         <img src="src/img/mariaHerminia_Jugemos5.jpg" alt="Rodaje de juguemos en el mundo" class="carrusel-imagen">
         <img src="src/img/mariaHerminia_Jugemos6.jpg" alt="Backstage de jugemos en el mundo" class="carrusel-imagen">
         <img src="src/img/mariaHerminia_Jugemos7.jpg" alt="Backstage de juguemos en el mundo" class="carrusel-imagen">

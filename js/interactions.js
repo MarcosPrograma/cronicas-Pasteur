@@ -94,3 +94,30 @@ export function iniciarCarrusel(){
         });
     });
 }
+
+//----------- Stepper ------------
+export function stepper(){
+    let actualStep = 1;
+
+    function pasoSiguiente(){
+        const actualElement = document.querySelector(`.step[data-step="${actualStep}"]`);
+        const siguienteElement = document.querySelector(`.step[data-step="${actualStep + 1}"]`);
+
+        if(siguienteElement){
+            actualElement.classList.remove('activo');
+            siguienteElement.classList.add('activo');
+            actualStep++;
+        }
+    }
+
+    function terminarPaso(){
+        document.getElementById('stepper-overlay').style.display = 'none';
+    }
+
+    document.querySelectorAll('.siguiente-step').forEach(boton => {
+        boton.addEventListener('click', pasoSiguiente);
+    });
+
+    document.querySelector('.final-step').addEventListener('click', terminarPaso);
+    document.querySelector('.step[data-step="1"]').classList.add('activo');
+}

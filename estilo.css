@@ -57,6 +57,65 @@ p {
   color: #1E1E1E;
 }
 
+/* ------------------------ Stepper ------------------------ */
+#stepper-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.stepper{
+  background: #ECE3CE;
+  padding: 2rem;
+  border-radius: 40px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.stepper p{
+  text-align: left;
+}
+
+.stepper img{
+  min-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+} 
+
+.step {
+  display: none;
+}
+
+.step.activo{
+  display: block;
+}
+
+.siguiente-step, .final-step{
+  background: #4F6F52;
+  color: #F1F1F1;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.siguiente-step:hover, .final-step:hover{
+  background: #739072;
+}
+
 /* ------------------------ Barra de navegación ------------------------ */
 
 header {
