@@ -177,8 +177,9 @@ header {
 }
 
 .panelDesplegable h2 {
-  padding-left: 1rem;
+  padding-left: 1.2rem;
   padding-right: 1rem;
+  padding-top: 1rem;
 }
 
 .panelDesplegable p {
@@ -186,6 +187,27 @@ header {
   margin-right: 2rem;
   padding: 0;
   line-height: 22px;
+}
+
+.panelDesplegable button {
+  background-color: #4F6F52;
+  color: #F1F1F1;
+  width: 100;
+  border-radius: 40px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  margin-left: 12rem;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.panelDesplegable button:hover {
+  background-color: #739072;
 }
 
 /* Carrusel */

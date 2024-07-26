@@ -1,18 +1,18 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-//Cargar mundo
-export function cargarModelo(scene){
+//Cargar plano del mundo
+export function cargarMundo(scene){
     const loader = new GLTFLoader().setPath('./src/models/');
 
     loader.load('scene.gltf', (gltf) => {
-        console.log('cargando modelo');
+        console.log('cargando mundo');
         const mesh = gltf.scene;
         mesh.position.set(0, 0, 0);
         scene.add(mesh);
     });
 }
 
-//Cargar objetos
+//Cargar objetos particulares
 export function cargarObjeto(rutaArchivo, id, scene, posicion) {
     const loader = new GLTFLoader();
 
@@ -20,9 +20,9 @@ export function cargarObjeto(rutaArchivo, id, scene, posicion) {
         console.log('cargando objetos');
         const objeto = gltf.scene;
         objeto.position.set(posicion.x, posicion.y, posicion.z); 
-        objeto.userData.id = id; //id para detectar cual panel se abre
+        objeto.userData.id = id;
 
-        //----Muy importante agregarle una mesh, dado que si no no intersecciona
+        //!!Muy importante agregar una mesh!!
         objeto.traverse((child) => {
             if (child.isMesh){
                 child.userData.id = id;

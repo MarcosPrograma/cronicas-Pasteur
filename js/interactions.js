@@ -75,11 +75,11 @@ export function iniciarCarrusel(){
             mostrarImagen(indice);
         }
 
-        let cambioAutomatico = setInterval(mostrarSiguienteImagen, 3000);
+        let cambioAutomatico = setInterval(mostrarSiguienteImagen, 5000);
 
         function resetTiempo(){
             clearInterval(cambioAutomatico);
-            cambioAutomatico = setInterval(mostrarSiguienteImagen, 3000);
+            cambioAutomatico = setInterval(mostrarSiguienteImagen, 5000);
         }
 
         siguiente.addEventListener('click', () => {
