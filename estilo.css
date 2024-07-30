@@ -98,7 +98,7 @@ p {
   display: block;
 }
 
-.siguiente-step, .final-step, .cierreStepper{
+.siguiente-step, .final-step{
   background: #4F6F52;
   color: #F1F1F1;
   border: none;
@@ -112,8 +112,27 @@ p {
   margin-top: 1rem;
 }
 
-.siguiente-step:hover, .final-step:hover, .cierreStepper:hover{
+.cierreStepper{
+  background-color: #ECE3CE;
+  color: #4F6F52;
+  border: 4px solid #4F6F52;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  padding: 0.6rem 1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.siguiente-step:hover, .final-step:hover{
   background: #739072;
+}
+
+.cierreStepper:hover{
+  background-color: #4F6F52;
+  color: #F1F1F1;
 }
 
 /* ------------------------ Barra de navegación ------------------------ */
@@ -251,22 +270,29 @@ header {
 .panelDesplegable button {
   background-color: #4F6F52;
   color: #F1F1F1;
-  width: 100;
+  width: 200px;
   border-radius: 40px;
   border: none;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
-  margin-left: 12rem;
   margin-top: 1rem;
   padding: 0.8rem;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
 }
 
 .panelDesplegable button:hover {
   background-color: #739072;
+}
+
+.botonesPaneles{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* Carrusel */

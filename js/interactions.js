@@ -99,6 +99,7 @@ export function iniciarCarrusel(){
 export function stepper(){
     let actualStep = 1;
 
+    //Funciones    
     function pasoSiguiente(){
         const actualElement = document.querySelector(`.step[data-step="${actualStep}"]`);
         const siguienteElement = document.querySelector(`.step[data-step="${actualStep + 1}"]`);
@@ -114,6 +115,13 @@ export function stepper(){
         document.getElementById('stepper-overlay').style.display = 'none';
     }
 
+    function mostrarStepper(){
+        document.getElementById('stepper-overlay').style.display = 'flex';
+        document.querySelectorAll('.step').forEach(step => step.classList.remove('activo'));
+        document.querySelector('.step[data-step="2"]').classList.add('activo');
+        actualStep = 2;
+    }
+
     document.querySelectorAll('.siguiente-step').forEach(boton => {
         boton.addEventListener('click', pasoSiguiente);
     });
@@ -123,5 +131,6 @@ export function stepper(){
     });
 
     document.querySelector('.final-step').addEventListener('click', terminarPaso);
+    document.querySelector('#mostrarStepper').addEventListener('click', mostrarStepper);
     document.querySelector('.step[data-step="1"]').classList.add('activo');
 }

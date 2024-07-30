@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Crónicas de Pasteur</title>
   <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
-<link rel="icon" href="src/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="src/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="estilo.css">
 </head>
 
@@ -24,7 +24,7 @@
   <!-- ------------------------ Barra de navegacion ------------------------ -->
   <nav class="nav">
     <ul class="nav-list">
-      <li><a href="#">Controles</a></li>
+      <li><a id="mostrarStepper" href="#">Controles</a></li>
       <li><a class="abrir" href="#">Menú</a></li>
     </ul>
   </nav>
@@ -45,30 +45,30 @@
           una estancia. Al observar algunas de las pocas casas levantas en la lejanía, comenzaron a barajar nombres. Se
           decidió que se llamaría Pasteur por el biólogo y químico francés, Louis Pasteur (1822-1898).
         </p>
-        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
         <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
+        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
       </div>
       <div class="step" data-step="2">
         <h2>Cómo moverse en el entorno</h2>
-        <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
+        <img src="src/gift/gifStepper1.gif" alt="Mouse siendo cliceado, presionado y usando la rueda">
         <p><br><b>Controles</b></p>
         <p><br><b>Clic izquierdo:</b> Seleccionar elemento o punto de interés</p>
         <p><b>Presionando clic izquierdo:</b> Rotación de la cámara</p>
         <p><b>Rueda del ratón:</b> Zoom de la cámara</p>
-        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
         <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
+        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
       </div>
       <div class="step" data-step="3">
         <h2>Cómo interactuar en el entorno</h2>
-        <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
+        <img src="src/gift/gifStepper2.gif" alt="Clikeando un cubo">
         <p><br><b>Interacción</b></p>
-        <p><br>Dentro del entorno existen varios puntos y elementos interactuables, desde instituciones hasta personas.
+        <p><br>Dentro del entorno existen varios puntos y elementos interactuables, desde instituciones hasta objetos.
           Podrás seleccionar alguno de ellos y clicarlo con el botón izquierdo del ratón para mostrar información sobre
           el mismo.
           Se desplegará sobre el lado derecho un panel con información sobre su fundación o biografía, fotos históricas
           o contenido relacionado. </p>
-        <button class="final-step" onclick="terminarPaso()">Siguiente</button>
         <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
+        <button class="final-step" onclick="terminarPaso()">Siguiente</button>
       </div>
     </div>
   </div>
@@ -83,7 +83,8 @@
         <button class="abrir" data-target="panel2">2. Parroquia Nuestra Señora del Carmen</button>
         <button class="abrir" data-target="panel3">3. Estación de ferrocarril de Pasteur</button>
         <button class="abrir" data-target="panel4">4. La Piamontesa</button>
-        <button class="abrir" data-target="panel4">5. María Herminia Avellaneda</button>
+        <button class="abrir" data-target="panel5">5. María Herminia Avellaneda</button>
+        <button class="abrir" data-target="panel6">6. Festival Nacional de Folklore de Pasteur</button>
       </div>
     </div>
   </div>
@@ -302,7 +303,9 @@
       conviviendo con varios artistas nacionales como Virgina Lago, Norman Briski, Jorge y Aída Luz, Hugo Caprera y Eva
       Franco.<br>
     </p>
+    <div class="botonesPaneles">
     <a href="https://youtu.be/U2LlW4N5Y7Q"><button>Ver película</button></a>
+  </div>
   </div>
 
   <div id="panel6" class="panelDesplegable">
@@ -336,9 +339,12 @@
       instituciones invitadas. Asimismo, se organiza en paralelo una feria artesanal que atrae a muchos visitantes para
       apreciar este evento. <br>
     </p>
-    <a href="mailto:elcorreoquequieres@correo.com"><button>Contactar por correo</button></a>
-    <a href="mailto:elcorreoquequieres@correo.com"><button>Contactar por correo</button></a>
-    <a href="mailto:elcorreoquequieres@correo.com"><button>Contactar por correo</button></a>
+    <h2>Contacto</h2>
+    <div class="botonesPaneles">
+      <a href="mailto:g_devega@hotmail.com"><button>Contactar por correo</button></a>
+      <a href="https://www.facebook.com/profile.php?id=100064411047243"><button>Faceboook</button></a>
+      <a href="https://www.instagram.com/festivalpasteur/?hl=es"><button>Instagram</button></a>
+    </div>
   </div>
 
   <!-- ------------------------ Footer ------------------------ -->
