@@ -2,7 +2,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 //Cargar plano del mundo
 export function cargarMundo(scene){
-    const loader = new GLTFLoader().setPath('./src/models/');
+    const loader = new GLTFLoader().setPath('/models/');
 
     loader.load('scene.gltf', (gltf) => {
         console.log('cargando mundo');

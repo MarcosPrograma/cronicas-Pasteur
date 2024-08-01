@@ -18,11 +18,12 @@ const controls = setearControles(camera, renderer);
 cargarMundo(scene);
 
 //Cargar objetos
-cargarObjeto('./src/models/monumento.gltf', 'panel1', scene, {x: 1.5, y: 1.8, z: 1.5});
-cargarObjeto('./src/models/iglesia.gltf', 'panel2', scene, {x: 27, y: 1.8, z: 27});
-cargarObjeto('./src/models/trainEstacion.gltf', 'panel3', scene, {x: -30, y: 1.6, z: -2});
-cargarObjeto('./src/models/ruinasPiamontesa.gltf', 'panel4', scene, {x: 6, y: 1.6, z: 29});
-cargarObjeto('./src/models/camera.gltf', 'panel5', scene, {x: 6, y: 1.6, z: 0});
+cargarObjeto('/models/monumento.gltf', 'panel1', scene, {x: 1.5, y: 1.8, z: 1.5});
+cargarObjeto('/models/iglesia.gltf', 'panel2', scene, {x: 27, y: 1.8, z: 27});
+cargarObjeto('/models/trainEstacion.gltf', 'panel3', scene, {x: -30, y: 1.6, z: -2});
+cargarObjeto('/models/ruinasPiamontesa.gltf', 'panel4', scene, {x: 6, y: 1.6, z: 29});
+cargarObjeto('/models/camaraPelicula.gltf', 'panel5', scene, {x: 6, y: 1.6, z: 0});
+cargarObjeto('/models/festival.gltf', 'panel6', scene, {x: -10, y: 1.6, z: -30});
 
 //Lucecita
 setearLuces(scene);
@@ -34,6 +35,17 @@ setearRaycaster(camera, scene);
 interacciones();
 iniciarCarrusel();
 stepper();
+
+//Resize
+window.addEventListener('resize', () =>{
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    renderer.setSize(width, height);
+
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+});
 
 //Update
 function animate() {

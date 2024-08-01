@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
   <title>Crónicas de Pasteur</title>
   <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="src/img/favicon.ico" type="image/x-icon">
@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  <!-- ------------------------ Script ------------------------ -->
+  <script type="module" src="main.js"></script>
+
   <!-- ------------------------ Canvas ------------------------ -->
   <div class="escena">
     <canvas class="escena-canvas"></canvas>
@@ -45,8 +48,8 @@
           una estancia. Al observar algunas de las pocas casas levantas en la lejanía, comenzaron a barajar nombres. Se
           decidió que se llamaría Pasteur por el biólogo y químico francés, Louis Pasteur (1822-1898).
         </p>
-        <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
-        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
+        <button class="cierreStepper">Saltar</button>
+        <button class="siguiente-step">Siguiente</button>
       </div>
       <div class="step" data-step="2">
         <h2>Cómo moverse en el entorno</h2>
@@ -55,8 +58,8 @@
         <p><br><b>Clic izquierdo:</b> Seleccionar elemento o punto de interés</p>
         <p><b>Presionando clic izquierdo:</b> Rotación de la cámara</p>
         <p><b>Rueda del ratón:</b> Zoom de la cámara</p>
-        <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
-        <button class="siguiente-step" onclick="pasoSiguiente()">Siguiente</button>
+        <button class="cierreStepper">Saltar</button>
+        <button class="siguiente-step">Siguiente</button>
       </div>
       <div class="step" data-step="3">
         <h2>Cómo interactuar en el entorno</h2>
@@ -67,8 +70,8 @@
           el mismo.
           Se desplegará sobre el lado derecho un panel con información sobre su fundación o biografía, fotos históricas
           o contenido relacionado. </p>
-        <button class="cierreStepper" onclick="terminarPaso()">Saltar</button>
-        <button class="final-step" onclick="terminarPaso()">Siguiente</button>
+        <button class="cierreStepper">Saltar</button>
+        <button class="final-step">Siguiente</button>
       </div>
     </div>
   </div>
@@ -348,9 +351,6 @@
   </div>
 
   <!-- ------------------------ Footer ------------------------ -->
-
-  <!-- ------------------------ Script ------------------------ -->
-  <script type="module" src="main.js"></script>
 </body>
 
 </html>

@@ -134,3 +134,7 @@ export function stepper(){
     document.querySelector('#mostrarStepper').addEventListener('click', mostrarStepper);
     document.querySelector('.step[data-step="1"]').classList.add('activo');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    stepper();
+});
