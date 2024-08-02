@@ -6,7 +6,7 @@ import { setearCamera } from "./js/camera.js"
 import { setearControles, setearRaycaster } from "./js/controls.js";
 import { cargarMundo, cargarObjeto } from "./js/loader.js";
 import { setearLuces } from "./js/light.js";
-import { interacciones, iniciarCarrusel, stepper } from './js/interactions.js';
+import { interacciones, marcadores, iniciarCarrusel, stepper } from './js/interactions.js';
 
 //Camara
 const camera = setearCamera();
@@ -36,6 +36,9 @@ interacciones();
 iniciarCarrusel();
 stepper();
 
+//Sincronizar marcadores
+const actualizarMarcador = marcadores(scene, camera);
+
 //Resize
 window.addEventListener('resize', () =>{
     const width = window.innerWidth;
@@ -52,6 +55,7 @@ function animate() {
     requestAnimationFrame(animate);
 
     controls.update();
+    actualizarMarcador();
 
     renderer.render(scene, camera);
 }

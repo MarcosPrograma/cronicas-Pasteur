@@ -48,8 +48,8 @@ class OrbitControls extends EventDispatcher {
         //Control de distancias para el zoom
 		//this.minDistance = 0;
 		//this.maxDistance = 1000;
-		this.minDistance = 15;
-		this.maxDistance = 100;
+		this.minDistance = 25;
+		this.maxDistance = 75;
 
 		// How far you can zoom in and out ( OrthographicCamera only )
 		this.minZoom = 0;
@@ -78,7 +78,7 @@ class OrbitControls extends EventDispatcher {
 		// This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
 		// Set to false to disable zooming
 		this.enableZoom = true;
-		this.zoomSpeed = 1.0;
+		this.zoomSpeed = 1.2;
 
 		// Set to false to disable rotating
 		this.enableRotate = true;
@@ -87,8 +87,8 @@ class OrbitControls extends EventDispatcher {
 		// Set to false to disable panning
         //Control de paneo
 		this.enablePan = false;
-		this.panSpeed = 1.0;
-		this.screenSpacePanning = true; // if false, pan orthogonal to world-space direction camera.up
+		this.panSpeed = 0.8;
+		this.screenSpacePanning = false; // if false, pan orthogonal to world-space direction camera.up
 		this.keyPanSpeed = 7.0;	// pixels moved per arrow key push
 		this.zoomToCursor = false;
 

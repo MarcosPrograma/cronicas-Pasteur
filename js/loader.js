@@ -26,6 +26,14 @@ export function cargarObjeto(rutaArchivo, id, scene, posicion) {
         objeto.traverse((child) => {
             if (child.isMesh){
                 child.userData.id = id;
+                child.castShadow = true;
+                child.receiveShadow = true;
+                
+                //Ajustar reflexion de la luz
+                if(child.material){
+                    child.material.metalness = 0.2;
+                    child.material.roughness = 1;
+                }
             }
         });
 
