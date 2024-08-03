@@ -10,350 +10,384 @@
 </head>
 
 <body>
+  <!-- ------------------------ Pantalla de carga ------------------------ -->
+  <div id="pantalla-carga">
+    <img src="src/img/portal.png" alt="Portal de Pasteur ilustrado">
+    <div id="barra-carga-contenedor">
+      <div id="barra-carga"></div>
+    </div>
+  </div>
+  
+  <div id="contenido-principal">
+
+    <!-- ------------------------ Canvas ------------------------ -->
+    <div class="escena">
+      <canvas class="escena-canvas"></canvas>
+    </div>
+
+    <!-- ------------------------ Loguito ------------------------ -->
+    <header>
+      <img src="src/img/logo.png" alt="Logo de Crónicas de Pasteur">
+      <h1 class="header-title">Crónicas de Pasteur</h1>
+    </header>
+
+    <!-- ------------------------ Barra de navegacion ------------------------ -->
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a id="mostrarStepper" href="#">Controles</a></li>
+        <li><a class="abrir" href="#">Menú</a></li>
+      </ul>
+    </nav>
+
+    <!-- ------------------------ Stepper ------------------------ -->
+    <div id="stepper-overlay">
+      <div class="stepper">
+        <div class="step activo" data-step="1">
+          <h2>¡Bienvenidos a Crónicas de Pasteur!</h2>
+          <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
+          <p><br><b>Pasteur</b> es una localidad perteneciente al partido de Lincoln y está ubicada al noroeste de la
+            provincia de
+            Buenos Aires. Fue fundada en 1909 por el comerciante español Manuel Antonio García Meijón y se posiciona
+            como
+            la tercera
+            localidad en importancia por número de habitantes dentro del partido.<br>
+            <br>Los orígenes del nombre se remontan a una tarde de verano donde se hallaban tres amigos por zonas
+            aledañas
+            a
+            una estancia. Al observar algunas de las pocas casas levantas en la lejanía, comenzaron a barajar nombres.
+            Se
+            decidió que se llamaría Pasteur por el biólogo y químico francés, Louis Pasteur (1822-1898).
+          </p>
+          <button class="cierreStepper">Saltar</button>
+          <button class="siguiente-step">Siguiente</button>
+        </div>
+        <div class="step" data-step="2">
+          <h2>Cómo moverse en el entorno</h2>
+          <img src="src/gift/gifStepper1.gif" alt="Mouse siendo cliceado, presionado y usando la rueda">
+          <p><br><b>Controles</b></p>
+          <p><br><b>Clic izquierdo:</b> Seleccionar elemento o punto de interés</p>
+          <p><b>Presionando clic izquierdo:</b> Rotación de la cámara</p>
+          <p><b>Rueda del ratón:</b> Zoom de la cámara</p>
+          <button class="cierreStepper">Saltar</button>
+          <button class="siguiente-step">Siguiente</button>
+        </div>
+        <div class="step" data-step="3">
+          <h2>Cómo interactuar en el entorno</h2>
+          <img src="src/gift/gifStepper2.gif" alt="Clikeando un cubo">
+          <p><br><b>Interacción</b></p>
+          <p><br>Dentro del entorno existen varios puntos y elementos interactuables, desde instituciones hasta objetos.
+            Podrás seleccionar alguno de ellos y clicarlo con el botón izquierdo del ratón para mostrar información
+            sobre
+            el mismo.
+            Se desplegará sobre el lado derecho un panel con información sobre su fundación o biografía, fotos
+            históricas
+            o contenido relacionado. </p>
+          <button class="cierreStepper">Saltar</button>
+          <button class="final-step">Siguiente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------ Menú ------------------------ -->
+    <div id="panel_menu" class="">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <h2>Localidad de Pasteur</h2>
+      <div class="panel_menu_opciones">
+        <div class="panel_menu_opciones_botones">
+          <button class="abrir" data-target="panel1">1. Manuel Antonio García Meijón</button>
+          <button class="abrir" data-target="panel2">2. Parroquia Nuestra Señora del Carmen</button>
+          <button class="abrir" data-target="panel3">3. Estación de ferrocarril de Pasteur</button>
+          <button class="abrir" data-target="panel4">4. La Piamontesa</button>
+          <button class="abrir" data-target="panel5">5. María Herminia Avellaneda</button>
+          <button class="abrir" data-target="panel6">6. Festival Nacional de Folklore de Pasteur</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------ Puntos de interes ------------------------ -->
+    <div id="marcadores-contenedor"></div>
+
+    <!-- ------------------------ Panel desplegables ------------------------ -->
+    <div id="panel1" class="panelDesplegable">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <div class="carrusel">
+        <div class="carrusel-imagenes">
+          <img src="src/img/manuelAntonio1.jpg" alt="Manuel Antonio García Meijón" class="carrusel-imagen">
+          <img src="src/img/manuelAntonio2.jpg" alt="Manuel Antonio García Meijón en su escritorio"
+            class="carrusel-imagen">
+          <img src="src/img/manuelAntonio3.jpg" alt="Manuel Antonio García Meijón en el patio de su casa"
+            class="carrusel-imagen">
+          <img src="src/img/manuelAntonio4.jpg"
+            alt="Manuel Antonio García Meijón comiendo un asado con amigos en Pasteur" class="carrusel-imagen">
+          <img src="src/img/manuelAntonio5.jpg" alt="autoretrato de Manuel Antonio García Meijón"
+            class="carrusel-imagen">
+        </div>
+        <div>
+          <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
+          <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
+        </div>
+      </div>
+      <h2>Manuel Antonio García Meijón (1856-1942)</h2>
+      <p><br>Nació el 5 de abril de 1856 en un pueblo de Cotobad, Pontevedra, Galicia, España. Sus padres fueron José
+        García y
+        María Meijón. Arribó a nuestro país en 1874 y comenzó a trabajar en una despensa de la ciudad de Junín, así como
+        también lo hizo en las ciudades de San Antonio de Areco y San Andrés de Giles. En 1882 se estableció en Lincoln
+        y
+        creó su cadena de almacenes, llamada "El Sol de Mayo", la cual trasladó a las distintas localidades que fundó,
+        entre ellas Arenaza (1904), Martínez de Hoz (1904), Bermúdez (1909), El Triunfo (1909), Pasteur (1909) y Roberts
+        (1916).</br>
+        <br>Asimismo, fue uno de los socios fundadores de la Sociedad Española de Socorros Mutuos (1884), la
+        Biblioteca
+        Escolar Popular Pestalozzi (1889) y el Banco Popular de Lincoln (1903). Propietario de grandes extensiones de
+        campo, se interesó por el progreso de la región, y su gestión hizo posible la construcción de la línea
+        ferroviaria
+        de Los Toldos a Ingeniero Luiggi, que pasaba por varias localidades de Lincoln. También se dedicó a la compra y
+        venta de cereales en varias zonas del país, e incluso realizó experimentos con semillas que importaba desde
+        Europa, por lo que a su campo lo llamó "La Experimental".</br>
+        <br>Quebrado económicamente a causa de la sequía en 1911 y las inundaciones de 1912 a 1914, se instaló en
+        Pasteur,
+        donde pasó sus últimos años de vida. Enfermó gravemente y falleció en el Hospital Español a los 86 años en
+        Buenos
+        Aires, el 6 de agosto de 1942. Sus restos descansan en el Cementerio de Lincoln, en el Panteón de la Sociedad
+        Española de Socorros Mutuos.</br>
+      </p>
+    </div>
+
+    <div id="panel2" class="panelDesplegable">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <div class="carrusel">
+        <div class="carrusel-imagenes">
+          <img src="src/img/parroquiaNuestraSenora1.jpg" alt="Medalla por la fundación" class="carrusel-imagen">
+          <img src="src/img/parroquiaNuestraSenora2.jpg" alt="Primera fiesta patronal" class="carrusel-imagen">
+          <img src="src/img/parroquiaNuestraSenora3.jpg" alt="Fiesta patronal en la localidad" class="carrusel-imagen">
+          <img src="src/img/parroquiaNuestraSenora4.jpg" alt="Primeras comuniones" class="carrusel-imagen">
+          <img src="src/img/parroquiaNuestraSenora5.jpg" alt="Primera boda" class="carrusel-imagen">
+        </div>
+        <div>
+          <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
+          <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
+        </div>
+      </div>
+      <h2>Parroquia Nuestra Señora del Carmen</h2>
+      <p><br>La piedra fundamental data del 1 de septiembre de 1912 en el terreno donado por nuestro fundador, Manuel
+        Antonio
+        García Meijón. Anteriormente, las primeras misas se dieron en un antiguo cine.
+        Las primeras confirmaciones se concedieron en 1922 y los primeros bautismos en 1923.
+        La iglesia fue destruida poco tiempo después de haber sido construida por un fuerte viento. En 1930, se formó
+        una
+        comisión para la “Restauración de la Iglesia Nuestra Señora del Carmen”. La inauguración del templo se realizó
+        el 14 de julio de 1932 y se le dio el nombre de “Nuestra Señora del Carmen”, estando a cargo de la parroquia de
+        Roberts. El 16 de julio del mismo año se otorgó la bendición de la obra de reconstrucción de la iglesia y la
+        casa
+        parroquial.</br>
+        <br>En 1931, se celebraron las primeras fiestas patronales, dando inicio a una tradición que continuaría en los
+        años
+        posteriores. La primera boda se celebró en 1934.
+        El 13 de noviembre de 1965, el Padre Carlos Mullins se hizo cargo de la capilla y comenzó a residir en la casa
+        parroquial en Pasteur, aledaña al templo. En 1966 se otorgó la bendición al Monumento de la Madre. Durante este
+        año, se autorizó la utilización del guardapolvo escolar para las comuniones.</br>
+        <br>En 1976, se inició la construcción del polideportivo, que se encontraría en la parte trasera de la capilla.
+        En 1980, el curso de catecismo comenzó a dictarse con una duración de dos años de preparación. En 1983, se
+        construyó el salón parroquial, aledaño a la parroquia. Asimismo, el 1 de octubre de 1985 comenzó la ampliación
+        del
+        templo. El 3 de mayo de 1985, obtuvo el rango de Cuasiparroquia y en 2004 fue anexada a Roberts por decreto
+        episcopal.
+        En 2000, se comenzó a utilizar la sala de catequesis y el 11 de abril de 2005 volvió a tener el rango de
+        capilla.</br>
+      </p>
+    </div>
+
+    <div id="panel3" class="panelDesplegable">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <div class="carrusel">
+        <div class="carrusel-imagenes">
+          <img src="src/img/estacion1.jpg" alt="Llegada del tren" class="carrusel-imagen">
+          <img src="src/img/estacion2.jpg" alt="Tren en el andén" class="carrusel-imagen">
+          <img src="src/img/estacion3.jpg" alt="Auxiliar en la oficina de la estación" class="carrusel-imagen">
+          <img src="src/img/estacion4.jpg" alt="Llegada del tren" class="carrusel-imagen">
+          <img src="src/img/estacion5.jpg" alt="Estación del tren desde la playa" class="carrusel-imagen">
+          <img src="src/img/estacion6.jpg" alt="Vagón de tren abandonado" class="carrusel-imagen">
+        </div>
+        <div>
+          <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
+          <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
+        </div>
+      </div>
+      <h2>Estación de Ferrocarril de Pasteur</h2>
+      <p><br>El Ferrocarril Oeste de Buenos Aires (FCO), inaugurado el 29 de agosto de 1857, fue el primero construido
+        en
+        Argentina. Este mismo se renombró como Ferrocarril Domingo Faustino Sarmiento.
+        El terraplén del ferrocarril en Pasteur se levantó en 1909, pero el primer tren de pasajeros pasó el 15 de julio
+        de 1910. Fue Manuel Antonio García Meijón, quien gestionó la construcción de la línea ferroviaria desde Los
+        Toldos
+        hacia
+        Ingeniero Luiggi.<br>
+        <br>La estación operaba diariamente, con trenes de pasajeros que viajaban desde Once a Pasteur de lunes a
+        viernes
+        y de Once a Ingeniero Luiggi los martes y sábados por la tarde. El recorrido duraba aproximadamente 7 horas. Los
+        menores de 3 años pagaban medio boleto, mientras que los mayores pagaban el boleto completo.
+        Los trenes de carga, que transportaban ganado vacuno y porcino, cereales y lana ovina, operaban los lunes y
+        sábados hacia la Estación Mecha (cercana a Bragado). Generalmente, el ganado iba al matadero y la lana se vendía
+        en el mercado de Avellaneda.<br>
+        <br>Se trabajaba en dos turnos de ocho horas: uno comenzaba a las 4:00 a.m. y el otro a las 4:00 p.m. El trabajo
+        incluía atención al público, limpieza de la estación, movimientos en la playa y control de señales. El equipo
+        estaba formado por un jefe de estación y dos auxiliares, quienes ejecutaban las órdenes y podían ser
+        transferidos
+        a otras estaciones cercanas.
+        Los pasajeros habituales eran pobladores locales que viajaban a diversos destinos. También había un comisionista
+        que viajaba regularmente desde Once a Pasteur y viceversa. Las encomiendas, como aves de corral y conejos, se
+        despachaban en coches particulares para encomiendas.
+        La comunicación con el resto de las estaciones se realizaba mediante telégrafo o por medio de un teléfono
+        interno.
+        En caso de emergencia, se usaba la unión telefónica o se daba aviso al maquinista para que procediera con
+        precaución si no había comunicación con la siguiente estación.<br>
+        <br>La actividad de la estación comenzó a declinar con las privatizaciones durante el gobierno de Menem. A
+        partir
+        de entonces, el tren dejó de operar rutinariamente y solo era solicitado por estaciones vecinas. El último
+        empleado fue despedido el 28 de febrero de 2002.
+        La estación ya no presta servicios de pasajeros y sus vías, concesionadas a Ferroexpreso Pampeano, están
+        inactivas y en estado de abandono. La estación se encuentra a 376,5 km de la Estación Once. Aunque ya no se usa
+        para el transporte ferroviario, las instalaciones se han adaptado para albergar diversos talleres y actividades,
+        así como una Biblioteca y Museo Municipal.<br>
+      </p>
+    </div>
+
+    <div id="panel4" class="panelDesplegable">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <div class="carrusel">
+        <div class="carrusel-imagenes">
+          <img src="src/img/piamontesa1.jpg" alt="Fachada frontal del hotel" class="carrusel-imagen">
+          <img src="src/img/piamontesa2.jpg" alt="Patio del hotel" class="carrusel-imagen">
+          <img src="src/img/piamontesa3.jpg" alt="Fachada lateral del hotel" class="carrusel-imagen">
+          <img src="src/img/piamontesa4.jpg" alt="Fachada frontal del hotel antes de ser derrumbado"
+            class="carrusel-imagen">
+        </div>
+        <div>
+          <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
+          <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
+        </div>
+      </div>
+      <h2>La Piamontesa</h2>
+      <p><br>La Piamontesa de Alais y Gagliardi fue un hotel y restaurante fundado en 1908, el cual se convirtió en el
+        refugio perfecto para nuestro fundador, Manuel Antonio García Meijón, durante sus visitas a la localidad.<br>
+        <br>Durante sus años de funcionamiento, este establecimiento recibió a innumerables huéspedes que disfrutaron de
+        sus cómodas habitaciones y su elegante comedor. La Piamontesa era famosa por la calidad y variedad de sus
+        comidas
+        italianas y los mejores vinos y bebidas alcohólicas importadas.
+        Entre sus huéspedes destacados estuvieron el Dr. Abatte y el Dr. Raúl Alberto Cabaleiro. También, actores y
+        actrices como Norman Brisky, Perla Santalla, Eva Franco y los hermanos Aída y Jorge Luz se hospedaron aquí
+        durante
+        el rodaje de la película "Juguemos en el Mundo" dirigida por María Herminia Avellaneda.<br>
+        <br>El 22 de marzo de 1980, a las 9 horas, comenzó el remate de la colección de bebidas añejas, elementos,
+        utilidades, muebles, vajillas y antigüedades que formaban parte del aclamado hotel. Posteriormente, el edificio
+        fue derrumbado y, en la actualidad, el terreno se encuentra baldío.<br>
+      </p>
+    </div>
+
+    <div id="panel5" class="panelDesplegable">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <div class="carrusel">
+        <div class="carrusel-imagenes">
+          <img src="src/img/mariaHerminia_Jugemos1.jpg" alt="Fotografía de Maria Herminia Avellaneda"
+            class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos2.jpg" alt="Fotografía de Maria Herminia Avellaneda"
+            class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos3.jpg" alt="Fotografía de Maria Herminia Avellaneda"
+            class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos4.jpg"
+            alt="Maria Herminia Avellaneda y Maria Elena Walsh en la plaza central" class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos5.jpg" alt="Rodaje de juguemos en el mundo" class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos6.jpg" alt="Backstage de jugemos en el mundo" class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos7.jpg" alt="Backstage de juguemos en el mundo" class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos8.jpg" alt="Cena antes del estreno" class="carrusel-imagen">
+          <img src="src/img/mariaHerminia_Jugemos9.jpg" alt="Estreno en el cine de Pasteur" class="carrusel-imagen">
+        </div>
+        <div>
+          <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
+          <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
+        </div>
+      </div>
+      <h2>María Herminia Avellaneda (1933-1997)</h2>
+      <p><br>Nació el 3 de noviembre de 1933 en Pasteur, Lincoln, Buenos Aires. Fue una destacada cineasta y productora
+        argentina, reconocida por su contribución al cine y la televisión del país.<br>
+        <br>Comenzó su carrera en la televisión a los 22 años y dedicó más de cuatro décadas a dignificar este medio,
+        convirtiéndose en una pionera del género. En 1984, se convirtió en la directora artística de ATC (Argentina
+        Televisora Color), dejando una huella significativa en la industria con su enfoque feminista y su pasión por la
+        calidad artística. Avellaneda también fue conocida por su capacidad para contar historias y su espíritu
+        generoso,
+        tanto en su vida personal como profesional.
+        <br>
+        <br>En 1971, filmó su primer largometraje, "Juguemos en el mundo", basado en un guión de María Elena Walsh. En
+        1980, realizó su segundo film, "Rosa de lejos", protagonizado por Leonor Benedetto (versión fílmica de una
+        exitosa
+        telenovela).
+        Entre sus logros, destaca su esfuerzo por promover la libertad, la solidaridad y la dignificación de la mujer a
+        través de su trabajo. En 1981, recibió el Diploma al Mérito de los Premios Konex como una de las cinco mejores
+        directoras de televisión de Argentina.
+        <br>Falleció víctima de un cáncer a los 63 años el 7 de julio de 1997 en Buenos Aires.<br>
+      </p>
+      <h2>Juguemos en el mundo (1971)</h2>
+      <p><br>"Juguemos en el mundo" es un film argentino de 1971 dirigido por María Herminia Avellaneda y escrito por
+        María Elena Walsh. La película, una comedia de 1 hora y 45 minutos, narra las aventuras de Doña Disparate y
+        Bambuco, quienes, cansados de la vida en la ciudad, huyen en su coche destartalado y llegan por casualidad a un
+        pueblito de La Pampa. Allí, revolucionan la aldea, asumen el gobierno temporalmente y luego se marchan. La
+        película mezcla fantasía ingenua con sátira política​. <br>
+        <br>Fue rodada casi en su totalidad en Pasteur, incluso muchos de los pobladores participaron del rodaje,
+        conviviendo con varios artistas nacionales como Virgina Lago, Norman Briski, Jorge y Aída Luz, Hugo Caprera y
+        Eva
+        Franco.<br>
+      </p>
+      <div class="botonesPaneles">
+        <a href="https://youtu.be/U2LlW4N5Y7Q"><button>Ver película</button></a>
+      </div>
+    </div>
+
+    <div id="panel6" class="panelDesplegable">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <div class="carrusel">
+        <div class="carrusel-imagenes">
+          <img src="src/img/festival1.jpg" alt="Predio del festival desde el lateral" class="carrusel-imagen">
+          <img src="src/img/festival2.jpg" alt="Predio del festival desde el frente" class="carrusel-imagen">
+          <img src="src/img/festival3.jpg" alt="Desfile de emprendados" class="carrusel-imagen">
+          <img src="src/img/festival4.jpg" alt="Inicio del desfile de emprendados" class="carrusel-imagen">
+        </div>
+        <div>
+          <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
+          <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
+        </div>
+      </div>
+      <h2>Festival Nacional de Folklore de Pasteur</h2>
+      <p><br>El Festival Nacional de Folklore de Pasteur, también conocido popularmente como "Festival de la Amistad",
+        nació en 1993 con el objetivo de mantener vivo el canto, la música y la danza de la región, por una comisión
+        formada durante 1992. Este evento crea un punto de encuentro e intercambio cultural entre localidades y ciudades
+        de todo el país, fomentando sentimientos de libertad, solidaridad, respeto y convivencia.<br>
+        <br>En el festival se entregan premios a los bailarines en diversas categorías: materna-infantil, malambo
+        infantil, solista y conjunto de malambo, y pareja estilizada y tradicional. Los primeros cuatro festivales se
+        llevaron a cabo en el estadio del Club Atlético Pasteur y Ferro Carril Oeste (1993, 1994, 1995 y 1996).
+        Posteriormente, se trasladó a un predio especial con infraestructura propia, donde se celebró hasta 2023.<br>
+        <br>Cada año, durante cuatro días, el festival reúne a grandes artistas locales y nacionales. Entre los artistas
+        que han participado se encuentran Los Nocheros, El Chaqueño Palavecino, Los Chalchaleros, Tamara Castro, Luciano
+        Pereyra, Horacio Guarany, Peteco Carabajal, Argentino Luna, entre otros de renombre. Además, delegaciones
+        compiten
+        en los rubros de danza y canto.
+        <br>El festejo también incluye un desfile de emprendados, carruajes, maquinarias agrícolas y delegaciones de
+        instituciones invitadas. Asimismo, se organiza en paralelo una feria artesanal que atrae a muchos visitantes
+        para
+        apreciar este evento. <br>
+      </p>
+      <h2>Contacto</h2>
+      <div class="botonesPaneles">
+        <a href="mailto:g_devega@hotmail.com"><button>Contactar por correo</button></a>
+        <a href="https://www.facebook.com/profile.php?id=100064411047243"><button>Faceboook</button></a>
+        <a href="https://www.instagram.com/festivalpasteur/?hl=es"><button>Instagram</button></a>
+      </div>
+    </div>
+
+
+    <!-- ------------------------ Footer ------------------------ -->
+  </div>
   <!-- ------------------------ Script ------------------------ -->
   <script type="module" src="main.js"></script>
-
-  <!-- ------------------------ Canvas ------------------------ -->
-  <div class="escena">
-    <canvas class="escena-canvas"></canvas>
-  </div>
-
-  <!-- ------------------------ Loguito ------------------------ -->
-  <header>
-    <img src="src/img/logo.png" alt="Logo de Crónicas de Pasteur">
-    <h1 class="header-title">Crónicas de Pasteur</h1>
-  </header>
-
-  <!-- ------------------------ Barra de navegacion ------------------------ -->
-  <nav class="nav">
-    <ul class="nav-list">
-      <li><a id="mostrarStepper" href="#">Controles</a></li>
-      <li><a class="abrir" href="#">Menú</a></li>
-    </ul>
-  </nav>
-
-  <!-- ------------------------ Stepper ------------------------ -->
-  <div id="stepper-overlay">
-    <div class="stepper">
-      <div class="step activo" data-step="1">
-        <h2>¡Bienvenidos a Crónicas de Pasteur!</h2>
-        <img src="src/img/bannerStepper.jpg" alt="Plano aéreo de la plaza central">
-        <p><br><b>Pasteur</b> es una localidad perteneciente al partido de Lincoln y está ubicada al noroeste de la
-          provincia de
-          Buenos Aires. Fue fundada en 1909 por el comerciante español Manuel Antonio García Meijón y se posiciona como
-          la tercera
-          localidad en importancia por número de habitantes dentro del partido.<br>
-          <br>Los orígenes del nombre se remontan a una tarde de verano donde se hallaban tres amigos por zonas aledañas
-          a
-          una estancia. Al observar algunas de las pocas casas levantas en la lejanía, comenzaron a barajar nombres. Se
-          decidió que se llamaría Pasteur por el biólogo y químico francés, Louis Pasteur (1822-1898).
-        </p>
-        <button class="cierreStepper">Saltar</button>
-        <button class="siguiente-step">Siguiente</button>
-      </div>
-      <div class="step" data-step="2">
-        <h2>Cómo moverse en el entorno</h2>
-        <img src="src/gift/gifStepper1.gif" alt="Mouse siendo cliceado, presionado y usando la rueda">
-        <p><br><b>Controles</b></p>
-        <p><br><b>Clic izquierdo:</b> Seleccionar elemento o punto de interés</p>
-        <p><b>Presionando clic izquierdo:</b> Rotación de la cámara</p>
-        <p><b>Rueda del ratón:</b> Zoom de la cámara</p>
-        <button class="cierreStepper">Saltar</button>
-        <button class="siguiente-step">Siguiente</button>
-      </div>
-      <div class="step" data-step="3">
-        <h2>Cómo interactuar en el entorno</h2>
-        <img src="src/gift/gifStepper2.gif" alt="Clikeando un cubo">
-        <p><br><b>Interacción</b></p>
-        <p><br>Dentro del entorno existen varios puntos y elementos interactuables, desde instituciones hasta objetos.
-          Podrás seleccionar alguno de ellos y clicarlo con el botón izquierdo del ratón para mostrar información sobre
-          el mismo.
-          Se desplegará sobre el lado derecho un panel con información sobre su fundación o biografía, fotos históricas
-          o contenido relacionado. </p>
-        <button class="cierreStepper">Saltar</button>
-        <button class="final-step">Siguiente</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ------------------------ Menú ------------------------ -->
-  <div id="panel_menu" class="">
-    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-    <h2>Localidad de Pasteur</h2>
-    <div class="panel_menu_opciones">
-      <div class="panel_menu_opciones_botones">
-        <button class="abrir" data-target="panel1">1. Manuel Antonio García Meijón</button>
-        <button class="abrir" data-target="panel2">2. Parroquia Nuestra Señora del Carmen</button>
-        <button class="abrir" data-target="panel3">3. Estación de ferrocarril de Pasteur</button>
-        <button class="abrir" data-target="panel4">4. La Piamontesa</button>
-        <button class="abrir" data-target="panel5">5. María Herminia Avellaneda</button>
-        <button class="abrir" data-target="panel6">6. Festival Nacional de Folklore de Pasteur</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ------------------------ Puntos de interes ------------------------ -->
-  <div id="marcadores-contenedor"></div>
-
-  <!-- ------------------------ Panel desplegables ------------------------ -->
-  <div id="panel1" class="panelDesplegable">
-    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-    <div class="carrusel">
-      <div class="carrusel-imagenes">
-        <img src="src/img/manuelAntonio1.jpg" alt="Manuel Antonio García Meijón" class="carrusel-imagen">
-        <img src="src/img/manuelAntonio2.jpg" alt="Manuel Antonio García Meijón en su escritorio"
-          class="carrusel-imagen">
-        <img src="src/img/manuelAntonio3.jpg" alt="Manuel Antonio García Meijón en el patio de su casa"
-          class="carrusel-imagen">
-        <img src="src/img/manuelAntonio4.jpg" alt="Manuel Antonio García Meijón comiendo un asado con amigos en Pasteur"
-          class="carrusel-imagen">
-        <img src="src/img/manuelAntonio5.jpg" alt="autoretrato de Manuel Antonio García Meijón" class="carrusel-imagen">
-      </div>
-      <div>
-        <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
-        <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
-      </div>
-    </div>
-    <h2>Manuel Antonio García Meijón (1856-1942)</h2>
-    <p><br>Nació el 5 de abril de 1856 en un pueblo de Cotobad, Pontevedra, Galicia, España. Sus padres fueron José
-      García y
-      María Meijón. Arribó a nuestro país en 1874 y comenzó a trabajar en una despensa de la ciudad de Junín, así como
-      también lo hizo en las ciudades de San Antonio de Areco y San Andrés de Giles. En 1882 se estableció en Lincoln y
-      creó su cadena de almacenes, llamada "El Sol de Mayo", la cual trasladó a las distintas localidades que fundó,
-      entre ellas Arenaza (1904), Martínez de Hoz (1904), Bermúdez (1909), El Triunfo (1909), Pasteur (1909) y Roberts
-      (1916).</br>
-      <br>Asimismo, fue uno de los socios fundadores de la Sociedad Española de Socorros Mutuos (1884), la
-      Biblioteca
-      Escolar Popular Pestalozzi (1889) y el Banco Popular de Lincoln (1903). Propietario de grandes extensiones de
-      campo, se interesó por el progreso de la región, y su gestión hizo posible la construcción de la línea
-      ferroviaria
-      de Los Toldos a Ingeniero Luiggi, que pasaba por varias localidades de Lincoln. También se dedicó a la compra y
-      venta de cereales en varias zonas del país, e incluso realizó experimentos con semillas que importaba desde
-      Europa, por lo que a su campo lo llamó "La Experimental".</br>
-      <br>Quebrado económicamente a causa de la sequía en 1911 y las inundaciones de 1912 a 1914, se instaló en
-      Pasteur,
-      donde pasó sus últimos años de vida. Enfermó gravemente y falleció en el Hospital Español a los 86 años en
-      Buenos
-      Aires, el 6 de agosto de 1942. Sus restos descansan en el Cementerio de Lincoln, en el Panteón de la Sociedad
-      Española de Socorros Mutuos.</br>
-    </p>
-  </div>
-
-  <div id="panel2" class="panelDesplegable">
-    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-    <div class="carrusel">
-      <div class="carrusel-imagenes">
-        <img src="src/img/parroquiaNuestraSenora1.jpg" alt="Medalla por la fundación" class="carrusel-imagen">
-        <img src="src/img/parroquiaNuestraSenora2.jpg" alt="Primera fiesta patronal" class="carrusel-imagen">
-        <img src="src/img/parroquiaNuestraSenora3.jpg" alt="Fiesta patronal en la localidad" class="carrusel-imagen">
-        <img src="src/img/parroquiaNuestraSenora4.jpg" alt="Primeras comuniones" class="carrusel-imagen">
-        <img src="src/img/parroquiaNuestraSenora5.jpg" alt="Primera boda" class="carrusel-imagen">
-      </div>
-      <div>
-        <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
-        <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
-      </div>
-    </div>
-    <h2>Parroquia Nuestra Señora del Carmen</h2>
-    <p><br>La piedra fundamental data del 1 de septiembre de 1912 en el terreno donado por nuestro fundador, Manuel
-      Antonio
-      García Meijón. Anteriormente, las primeras misas se dieron en un antiguo cine.
-      Las primeras confirmaciones se concedieron en 1922 y los primeros bautismos en 1923.
-      La iglesia fue destruida poco tiempo después de haber sido construida por un fuerte viento. En 1930, se formó una
-      comisión para la “Restauración de la Iglesia Nuestra Señora del Carmen”. La inauguración del templo se realizó
-      el 14 de julio de 1932 y se le dio el nombre de “Nuestra Señora del Carmen”, estando a cargo de la parroquia de
-      Roberts. El 16 de julio del mismo año se otorgó la bendición de la obra de reconstrucción de la iglesia y la casa
-      parroquial.</br>
-      <br>En 1931, se celebraron las primeras fiestas patronales, dando inicio a una tradición que continuaría en los
-      años
-      posteriores. La primera boda se celebró en 1934.
-      El 13 de noviembre de 1965, el Padre Carlos Mullins se hizo cargo de la capilla y comenzó a residir en la casa
-      parroquial en Pasteur, aledaña al templo. En 1966 se otorgó la bendición al Monumento de la Madre. Durante este
-      año, se autorizó la utilización del guardapolvo escolar para las comuniones.</br>
-      <br>En 1976, se inició la construcción del polideportivo, que se encontraría en la parte trasera de la capilla.
-      En 1980, el curso de catecismo comenzó a dictarse con una duración de dos años de preparación. En 1983, se
-      construyó el salón parroquial, aledaño a la parroquia. Asimismo, el 1 de octubre de 1985 comenzó la ampliación del
-      templo. El 3 de mayo de 1985, obtuvo el rango de Cuasiparroquia y en 2004 fue anexada a Roberts por decreto
-      episcopal.
-      En 2000, se comenzó a utilizar la sala de catequesis y el 11 de abril de 2005 volvió a tener el rango de
-      capilla.</br>
-    </p>
-  </div>
-
-  <div id="panel3" class="panelDesplegable">
-    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-    <div class="carrusel">
-      <div class="carrusel-imagenes">
-        <img src="src/img/estacion1.jpg" alt="Llegada del tren" class="carrusel-imagen">
-        <img src="src/img/estacion2.jpg" alt="Tren en el andén" class="carrusel-imagen">
-        <img src="src/img/estacion3.jpg" alt="Auxiliar en la oficina de la estación" class="carrusel-imagen">
-        <img src="src/img/estacion4.jpg" alt="Llegada del tren" class="carrusel-imagen">
-        <img src="src/img/estacion5.jpg" alt="Estación del tren desde la playa" class="carrusel-imagen">
-        <img src="src/img/estacion6.jpg" alt="Vagón de tren abandonado" class="carrusel-imagen">
-      </div>
-      <div>
-        <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
-        <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
-      </div>
-    </div>
-    <h2>Estación de Ferrocarril de Pasteur</h2>
-    <p><br>El Ferrocarril Oeste de Buenos Aires (FCO), inaugurado el 29 de agosto de 1857, fue el primero construido en
-      Argentina. Este mismo se renombró como Ferrocarril Domingo Faustino Sarmiento.
-      El terraplén del ferrocarril en Pasteur se levantó en 1909, pero el primer tren de pasajeros pasó el 15 de julio
-      de 1910. Fue Manuel Antonio García Meijón, quien gestionó la construcción de la línea ferroviaria desde Los Toldos
-      hacia
-      Ingeniero Luiggi.<br>
-      <br>La estación operaba diariamente, con trenes de pasajeros que viajaban desde Once a Pasteur de lunes a viernes
-      y de Once a Ingeniero Luiggi los martes y sábados por la tarde. El recorrido duraba aproximadamente 7 horas. Los
-      menores de 3 años pagaban medio boleto, mientras que los mayores pagaban el boleto completo.
-      Los trenes de carga, que transportaban ganado vacuno y porcino, cereales y lana ovina, operaban los lunes y
-      sábados hacia la Estación Mecha (cercana a Bragado). Generalmente, el ganado iba al matadero y la lana se vendía
-      en el mercado de Avellaneda.<br>
-      <br>Se trabajaba en dos turnos de ocho horas: uno comenzaba a las 4:00 a.m. y el otro a las 4:00 p.m. El trabajo
-      incluía atención al público, limpieza de la estación, movimientos en la playa y control de señales. El equipo
-      estaba formado por un jefe de estación y dos auxiliares, quienes ejecutaban las órdenes y podían ser transferidos
-      a otras estaciones cercanas.
-      Los pasajeros habituales eran pobladores locales que viajaban a diversos destinos. También había un comisionista
-      que viajaba regularmente desde Once a Pasteur y viceversa. Las encomiendas, como aves de corral y conejos, se
-      despachaban en coches particulares para encomiendas.
-      La comunicación con el resto de las estaciones se realizaba mediante telégrafo o por medio de un teléfono interno.
-      En caso de emergencia, se usaba la unión telefónica o se daba aviso al maquinista para que procediera con
-      precaución si no había comunicación con la siguiente estación.<br>
-      <br>La actividad de la estación comenzó a declinar con las privatizaciones durante el gobierno de Menem. A partir
-      de entonces, el tren dejó de operar rutinariamente y solo era solicitado por estaciones vecinas. El último
-      empleado fue despedido el 28 de febrero de 2002.
-      La estación ya no presta servicios de pasajeros y sus vías, concesionadas a Ferroexpreso Pampeano, están
-      inactivas y en estado de abandono. La estación se encuentra a 376,5 km de la Estación Once. Aunque ya no se usa
-      para el transporte ferroviario, las instalaciones se han adaptado para albergar diversos talleres y actividades,
-      así como una Biblioteca y Museo Municipal.<br>
-    </p>
-  </div>
-
-  <div id="panel4" class="panelDesplegable">
-    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-    <div class="carrusel">
-      <div class="carrusel-imagenes">
-        <img src="src/img/piamontesa1.jpg" alt="Fachada frontal del hotel" class="carrusel-imagen">
-        <img src="src/img/piamontesa2.jpg" alt="Patio del hotel" class="carrusel-imagen">
-        <img src="src/img/piamontesa3.jpg" alt="Fachada lateral del hotel" class="carrusel-imagen">
-        <img src="src/img/piamontesa4.jpg" alt="Fachada frontal del hotel antes de ser derrumbado"
-          class="carrusel-imagen">
-      </div>
-      <div>
-        <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
-        <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
-      </div>
-    </div>
-    <h2>La Piamontesa</h2>
-    <p><br>La Piamontesa de Alais y Gagliardi fue un hotel y restaurante fundado en 1908, el cual se convirtió en el
-      refugio perfecto para nuestro fundador, Manuel Antonio García Meijón, durante sus visitas a la localidad.<br>
-      <br>Durante sus años de funcionamiento, este establecimiento recibió a innumerables huéspedes que disfrutaron de
-      sus cómodas habitaciones y su elegante comedor. La Piamontesa era famosa por la calidad y variedad de sus comidas
-      italianas y los mejores vinos y bebidas alcohólicas importadas.
-      Entre sus huéspedes destacados estuvieron el Dr. Abatte y el Dr. Raúl Alberto Cabaleiro. También, actores y
-      actrices como Norman Brisky, Perla Santalla, Eva Franco y los hermanos Aída y Jorge Luz se hospedaron aquí durante
-      el rodaje de la película "Juguemos en el Mundo" dirigida por María Herminia Avellaneda.<br>
-      <br>El 22 de marzo de 1980, a las 9 horas, comenzó el remate de la colección de bebidas añejas, elementos,
-      utilidades, muebles, vajillas y antigüedades que formaban parte del aclamado hotel. Posteriormente, el edificio
-      fue derrumbado y, en la actualidad, el terreno se encuentra baldío.<br>
-    </p>
-  </div>
-
-  <div id="panel5" class="panelDesplegable">
-    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-    <div class="carrusel">
-      <div class="carrusel-imagenes">
-        <img src="src/img/mariaHerminia_Jugemos1.jpg" alt="Fotografía de Maria Herminia Avellaneda"
-          class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos2.jpg" alt="Fotografía de Maria Herminia Avellaneda"
-          class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos3.jpg" alt="Fotografía de Maria Herminia Avellaneda"
-          class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos4.jpg"
-          alt="Maria Herminia Avellaneda y Maria Elena Walsh en la plaza central" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos5.jpg" alt="Rodaje de juguemos en el mundo" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos6.jpg" alt="Backstage de jugemos en el mundo" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos7.jpg" alt="Backstage de juguemos en el mundo" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos8.jpg" alt="Cena antes del estreno" class="carrusel-imagen">
-        <img src="src/img/mariaHerminia_Jugemos9.jpg" alt="Estreno en el cine de Pasteur" class="carrusel-imagen">
-      </div>
-      <div>
-        <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
-        <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
-      </div>
-    </div>
-    <h2>María Herminia Avellaneda (1933-1997)</h2>
-    <p><br>Nació el 3 de noviembre de 1933 en Pasteur, Lincoln, Buenos Aires. Fue una destacada cineasta y productora
-      argentina, reconocida por su contribución al cine y la televisión del país.<br>
-      <br>Comenzó su carrera en la televisión a los 22 años y dedicó más de cuatro décadas a dignificar este medio,
-      convirtiéndose en una pionera del género. En 1984, se convirtió en la directora artística de ATC (Argentina
-      Televisora Color), dejando una huella significativa en la industria con su enfoque feminista y su pasión por la
-      calidad artística. Avellaneda también fue conocida por su capacidad para contar historias y su espíritu generoso,
-      tanto en su vida personal como profesional.
-      <br>
-      <br>En 1971, filmó su primer largometraje, "Juguemos en el mundo", basado en un guión de María Elena Walsh. En
-      1980, realizó su segundo film, "Rosa de lejos", protagonizado por Leonor Benedetto (versión fílmica de una exitosa
-      telenovela).
-      Entre sus logros, destaca su esfuerzo por promover la libertad, la solidaridad y la dignificación de la mujer a
-      través de su trabajo. En 1981, recibió el Diploma al Mérito de los Premios Konex como una de las cinco mejores
-      directoras de televisión de Argentina.
-      <br>Falleció víctima de un cáncer a los 63 años el 7 de julio de 1997 en Buenos Aires.<br>
-    </p>
-    <h2>Juguemos en el mundo (1971)</h2>
-    <p><br>"Juguemos en el mundo" es un film argentino de 1971 dirigido por María Herminia Avellaneda y escrito por
-      María Elena Walsh. La película, una comedia de 1 hora y 45 minutos, narra las aventuras de Doña Disparate y
-      Bambuco, quienes, cansados de la vida en la ciudad, huyen en su coche destartalado y llegan por casualidad a un
-      pueblito de La Pampa. Allí, revolucionan la aldea, asumen el gobierno temporalmente y luego se marchan. La
-      película mezcla fantasía ingenua con sátira política​. <br>
-      <br>Fue rodada casi en su totalidad en Pasteur, incluso muchos de los pobladores participaron del rodaje,
-      conviviendo con varios artistas nacionales como Virgina Lago, Norman Briski, Jorge y Aída Luz, Hugo Caprera y Eva
-      Franco.<br>
-    </p>
-    <div class="botonesPaneles">
-      <a href="https://youtu.be/U2LlW4N5Y7Q"><button>Ver película</button></a>
-    </div>
-  </div>
-
-  <div id="panel6" class="panelDesplegable">
-    <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-    <div class="carrusel">
-      <div class="carrusel-imagenes">
-        <img src="src/img/festival1.jpg" alt="Predio del festival desde el lateral" class="carrusel-imagen">
-        <img src="src/img/festival2.jpg" alt="Predio del festival desde el frente" class="carrusel-imagen">
-        <img src="src/img/festival3.jpg" alt="Desfile de emprendados" class="carrusel-imagen">
-        <img src="src/img/festival4.jpg" alt="Inicio del desfile de emprendados" class="carrusel-imagen">
-      </div>
-      <div>
-        <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
-        <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
-      </div>
-    </div>
-    <h2>Festival Nacional de Folklore de Pasteur</h2>
-    <p><br>El Festival Nacional de Folklore de Pasteur, también conocido popularmente como "Festival de la Amistad",
-      nació en 1993 con el objetivo de mantener vivo el canto, la música y la danza de la región, por una comisión
-      formada durante 1992. Este evento crea un punto de encuentro e intercambio cultural entre localidades y ciudades
-      de todo el país, fomentando sentimientos de libertad, solidaridad, respeto y convivencia.<br>
-      <br>En el festival se entregan premios a los bailarines en diversas categorías: materna-infantil, malambo
-      infantil, solista y conjunto de malambo, y pareja estilizada y tradicional. Los primeros cuatro festivales se
-      llevaron a cabo en el estadio del Club Atlético Pasteur y Ferro Carril Oeste (1993, 1994, 1995 y 1996).
-      Posteriormente, se trasladó a un predio especial con infraestructura propia, donde se celebró hasta 2023.<br>
-      <br>Cada año, durante cuatro días, el festival reúne a grandes artistas locales y nacionales. Entre los artistas
-      que han participado se encuentran Los Nocheros, El Chaqueño Palavecino, Los Chalchaleros, Tamara Castro, Luciano
-      Pereyra, Horacio Guarany, Peteco Carabajal, Argentino Luna, entre otros de renombre. Además, delegaciones compiten
-      en los rubros de danza y canto.
-      <br>El festejo también incluye un desfile de emprendados, carruajes, maquinarias agrícolas y delegaciones de
-      instituciones invitadas. Asimismo, se organiza en paralelo una feria artesanal que atrae a muchos visitantes para
-      apreciar este evento. <br>
-    </p>
-    <h2>Contacto</h2>
-    <div class="botonesPaneles">
-      <a href="mailto:g_devega@hotmail.com"><button>Contactar por correo</button></a>
-      <a href="https://www.facebook.com/profile.php?id=100064411047243"><button>Faceboook</button></a>
-      <a href="https://www.instagram.com/festivalpasteur/?hl=es"><button>Instagram</button></a>
-    </div>
-  </div>
-
-  <!-- ------------------------ Footer ------------------------ -->
 </body>
 
 </html>

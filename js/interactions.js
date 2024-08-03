@@ -157,7 +157,7 @@ export function stepper(){
     }
 
     function terminarPaso(){
-        document.getElementById('stepper-overlay').style.display = 'none';
+        document.getElementById('stepper-overlay').style.display = 'none';   
     }
 
     function mostrarStepper(){
@@ -165,6 +165,7 @@ export function stepper(){
         document.querySelectorAll('.step').forEach(step => step.classList.remove('activo'));
         document.querySelector('.step[data-step="2"]').classList.add('activo');
         actualStep = 2;
+       
     }
 
     document.querySelectorAll('.siguiente-step').forEach(boton => {

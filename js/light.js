@@ -1,26 +1,26 @@
 import * as THREE from 'three';
 
 export function setearLuces(scene) {
-    const ambientLight = new THREE.AmbientLight(0x404040, 1);
-    scene.add(ambientLight);
-    
-    const directionalLight = new THREE.DirectionalLight(0xffeeda, 2.5);
-    directionalLight.position.set(10, 40, 10);
-    directionalLight.castShadow = true;
+    const luzAmbiental = new THREE.AmbientLight(0x404040, 0.5);
+    scene.add(luzAmbiental);
 
-    directionalLight.shadow.mapSize.width = 1024;  //calidad de la sombras
-    directionalLight.shadow.mapSize.height = 1024;
-    directionalLight.shadow.camera.near = 0.5;
-    directionalLight.shadow.camera.far = 500;
-    directionalLight.shadow.camera.left = -50;
-    directionalLight.shadow.camera.right = 50;
-    directionalLight.shadow.camera.top = 50;
-    directionalLight.shadow.camera.bottom = -50;
+    //Dos luces direcionales para que se vean las caras de los modelos
+    const luzDireccional1 = new THREE.DirectionalLight(0xffffff, 1.5);
+    luzDireccional1.position.set(50, 50, 50); 
+    luzDireccional1.castShadow = true; 
+    luzDireccional1.shadow.mapSize.width = 2048; //Calidad de la sombra en el mapa
+    luzDireccional1.shadow.mapSize.height = 2048;
+    scene.add(luzDireccional1);
 
-    scene.add(directionalLight);
+    const luzDireccional2 = new THREE.DirectionalLight(0xffffff, 0.75);
+    luzDireccional2.position.set(-50, 50, -50);
+    luzDireccional2.castShadow = true;
+    luzDireccional2.shadow.mapSize.width = 2048; 
+    luzDireccional2.shadow.mapSize.height = 2048;
+    scene.add(luzDireccional2);
 
-    //Setear render para manejar sombras
-    const renderer = new THREE.WebGLRenderer();
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap; //mapa de sombras suaves
+    //Mejorar la intesidad de la luz
+    const hemiLuz = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    hemiLuz.position.set(0, 200, 0);
+    scene.add(hemiLuz);
 }

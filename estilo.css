@@ -14,7 +14,8 @@
   outline: none;
 }
 
-html, body {
+html,
+body {
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -57,8 +58,67 @@ p {
   color: #1E1E1E;
 }
 
+/* ------------------------ Pantalla de carga ------------------------ */
+#pantalla-carga {
+  background-color: #E0FBE2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+#pantalla-carga img {
+  width: 20%;
+  margin-bottom: 1rem;
+}
+
+#barra-carga-contenedor {
+  width: 50%;
+  height: 20px;
+  background-color: #739072;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+#barra-carga {
+  width: 0;
+  height: 100%;
+  background-color: #4F6F52;
+  border-radius: 15px 0 0 15px;
+  transition: width 0.5s ease;
+}
+
+#pantalla-carga p {
+  text-align: center;
+  font-size: 18px;
+  color: #1E1E1E;
+}
+
 /* ------------------------ Stepper ------------------------ */
-#stepper-overlay{
+#fondoStepper-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9;
+}
+
+#fondoStepper-overlay.visible{
+  opacity: 1;
+}
+
+#stepper-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -73,11 +133,11 @@ p {
   pointer-events: all;
 }
 
-#stepper-overlay.visible{
+#stepper-overlay.visible {
   opacity: 1;
 }
 
-.stepper{
+.stepper {
   background: #ECE3CE;
   padding: 2rem;
   border-radius: 40px;
@@ -86,25 +146,26 @@ p {
   text-align: center;
 }
 
-.stepper p{
+.stepper p {
   text-align: left;
 }
 
-.stepper img{
+.stepper img {
   min-width: 100%;
   height: auto;
   margin-top: 1rem;
-} 
+}
 
 .step {
   display: none;
 }
 
-.step.activo{
+.step.activo {
   display: block;
 }
 
-.siguiente-step, .final-step{
+.siguiente-step,
+.final-step {
   background: #4F6F52;
   color: #F1F1F1;
   border: none;
@@ -118,7 +179,7 @@ p {
   margin-top: 1rem;
 }
 
-.cierreStepper{
+.cierreStepper {
   background-color: #ECE3CE;
   color: #4F6F52;
   border: 4px solid #4F6F52;
@@ -132,11 +193,12 @@ p {
   margin-right: 1rem;
 }
 
-.siguiente-step:hover, .final-step:hover{
+.siguiente-step:hover,
+.final-step:hover {
   background: #739072;
 }
 
-.cierreStepper:hover{
+.cierreStepper:hover {
   background-color: #4F6F52;
   color: #F1F1F1;
 }
@@ -245,7 +307,7 @@ header {
 }
 
 /* ------------------------ Marcadores ------------------------ */
-#marcadores-contenedor{
+#marcadores-contenedor {
   position: absolute;
   top: 0;
   left: 0;
@@ -254,7 +316,7 @@ header {
   pointer-events: none;
 }
 
-.marcador{
+.marcador {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -318,7 +380,7 @@ header {
   background-color: #739072;
 }
 
-.botonesPaneles{
+.botonesPaneles {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -335,17 +397,18 @@ header {
   padding-top: 1rem;
 }
 
-.carrusel-imagenes{
+.carrusel-imagenes {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-.carrusel-imagen{
+.carrusel-imagen {
   min-width: 100%;
   height: auto;
 }
 
-.carrusel-bot-ant, .carrusel-bot-sig{
+.carrusel-bot-ant,
+.carrusel-bot-sig {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -356,25 +419,27 @@ header {
   transition: opacity 0.3s;
 }
 
-.carrusel-bot-sig:hover, .carrusel-bot-ant:hover {
+.carrusel-bot-sig:hover,
+.carrusel-bot-ant:hover {
   opacity: 1;
 }
 
-.carrusel-bot-sig{
+.carrusel-bot-sig {
   right: 1rem;
 }
 
-.carrusel-bot-ant{
+.carrusel-bot-ant {
   left: 1rem;
 }
 
 /* Keyframes */
-@keyframes slideUp{
-  from{
+@keyframes slideUp {
+  from {
     transform: translateY(100%);
     opacity: 0;
   }
-  to{
+
+  to {
     transform: translateY(0);
     opacity: 1;
   }
@@ -385,12 +450,12 @@ header {
   width: 12px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background-color: #ECE3CE;
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #DBD3C1;
   border-radius: 10px;
   border: 3px solid #ECE3CE;
