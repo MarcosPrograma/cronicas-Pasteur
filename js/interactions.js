@@ -156,18 +156,39 @@ export function stepper(){
         }
     }
 
+    //------------------------------------------------------------------
     function terminarPaso(){
-        document.getElementById('stepper-overlay').style.display = 'none';   
+        const overlay = document.getElementById('stepperFondo-overlay');
+        const stepper = document.getElementById('stepper-overlay');
+
+        overlay.classList.add('hidden');
+        overlay.classList.remove('visible');
+        stepper.classList.remove('visible');
+
+        setTimeout(() =>{
+            overlay.style.display = 'none';
+        }, 500);
+
+        //document.getElementById('stepper-overlay').style.display = 'none';   
     }
 
-    function mostrarStepper(){
-        document.getElementById('stepper-overlay').style.display = 'flex';
+    //------------------------------------------------------------------
+    function mostrarStepper(step = 1){
+        const overlay = document.getElementById('stepperFondo-overlay');
+        const stepper = document.getElementById('stepper-overlay');
+
+        overlay.style.display = 'flex';
+        overlay.classList.remove('hidden');
+        overlay.classList.add('visible');
+        stepper.classList.add('visible');
+
+        //document.getElementById('stepper-overlay').style.display = 'flex';
         document.querySelectorAll('.step').forEach(step => step.classList.remove('activo'));
-        document.querySelector('.step[data-step="2"]').classList.add('activo');
-        actualStep = 2;
-       
+        document.querySelector(`.step[data-step="${step}"]`).classList.add('activo');
+        actualStep = step;
     }
 
+    //------------------------------------------------------------------
     document.querySelectorAll('.siguiente-step').forEach(boton => {
         boton.addEventListener('click', pasoSiguiente);
     });
@@ -177,8 +198,15 @@ export function stepper(){
     });
 
     document.querySelector('.final-step').addEventListener('click', terminarPaso);
-    document.querySelector('#mostrarStepper').addEventListener('click', mostrarStepper);
-    document.querySelector('.step[data-step="1"]').classList.add('activo');
+    document.querySelector('#mostrarStepper').addEventListener('click', (e) =>{
+        e.preventDefault();
+        mostrarStepper(2);
+    });
+    //document.querySelector('.step[data-step="1"]').classList.add('activo');
+
+    window.addEventListener('load', () => {
+        mostrarStepper();
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
