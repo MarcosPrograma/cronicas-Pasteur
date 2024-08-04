@@ -7,7 +7,18 @@ export function interacciones() {
         const cerrar = document.querySelectorAll('.cerrar');
         const paneles = document.querySelectorAll('.panelDesplegable'); //Paneles de info
         const panel_menu = document.getElementById('panel_menu'); //Menu
+        //const contenedorMarcadores = document.getElementById('marcadores-contenedor');
         let panelActualmenteAbierto = null;
+
+        /*Ocultar los marcadores
+        function toggleMarcadores(visible){
+            console.log('toggleMarcadores:', visible);
+            if (visible){
+                contenedorMarcadores.classList.remove('oculto');
+            } else {
+                contenedorMarcadores.classList.add('oculto');
+            }
+        }*/
 
         //Apertura de los paneles
         abrir.forEach(boton => {
@@ -23,6 +34,7 @@ export function interacciones() {
                 if (targetPanel) {
                     targetPanel.classList.toggle('mostrar');
                     panelActualmenteAbierto = targetPanel.classList.contains('mostrar') ? targetPanel : null;
+                    //toggleMarcadores(!panelActualmenteAbierto);
                 }
 
                 if (panel_menu) {
@@ -47,12 +59,26 @@ export function interacciones() {
                         panelActualmenteAbierto = panel;
                     }
                 });
+                
+                /*
+                if(!algunPanelAbierto){
+                    toggleMarcadores(true);
+                }
+                */
 
                 if (panel_menu) {
                     panel_menu.classList.remove('mostrar');
                 }
             });
         });
+
+        /*
+        if(panel_menu){
+            panel_menu.addEventListener('cierrePanel', function() {
+                toggleMarcadores(!panel_menu.classList.contains('mostrar'));
+            });
+        }
+        */
     });
 }
 
