@@ -48,8 +48,8 @@ class OrbitControls extends EventDispatcher {
         //Control de distancias para el zoom
 		//this.minDistance = 0;
 		//this.maxDistance = 1000;
-		this.minDistance = 25;
-		this.maxDistance = 75;
+		this.minDistance = 22;
+		this.maxDistance = 70;
 
 		// How far you can zoom in and out ( OrthographicCamera only )
 		this.minZoom = 0;
@@ -73,7 +73,7 @@ class OrbitControls extends EventDispatcher {
 		// Set to true to enable damping (inertia)
 		// If damping is enabled, you must call controls.update() in your animation loop
 		this.enableDamping = true;
-		this.dampingFactor = 0.03;
+		this.dampingFactor = 0.06;
 
 		// This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
 		// Set to false to disable zooming
@@ -82,7 +82,7 @@ class OrbitControls extends EventDispatcher {
 
 		// Set to false to disable rotating
 		this.enableRotate = true;
-		this.rotateSpeed = 1.0;
+		this.rotateSpeed = 0.8;
 
 		// Set to false to disable panning
         //Control de paneo

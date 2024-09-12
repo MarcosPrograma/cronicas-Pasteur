@@ -86,12 +86,16 @@ export function interacciones() {
 export function marcadores(scene, camera) {
     const contenedor = document.getElementById('marcadores-contenedor');
     const marcadores = [
-        {id: 'marker1', panelId: 'panel1', position: {x: 1.5, y: 6, z: 1.5}},
-        {id: 'marker2', panelId: 'panel2', position: {x: 27, y: 6, z: 27}},
-        {id: 'marker3', panelId: 'panel3', position: {x: -30, y: 6, z: -2}},
-        {id: 'marker4', panelId: 'panel4', position: {x: 6, y: 6, z: 29}},
-        {id: 'marker5', panelId: 'panel5', position: {x: 6, y: 4, z: 0}},
-        {id: 'marker6', panelId: 'panel6', position: {x: -10, y: 6, z: -30}}
+        {id: 'marker1', panelId: 'panel1', position: {x: 1.5, y: 5, z: 1.5}},
+        {id: 'marker2', panelId: 'panel2', position: {x: 6, y: 6, z: 29}},
+        {id: 'marker3', panelId: 'panel3', position: {x: -30, y: 6, z: -1}},
+        {id: 'marker4', panelId: 'panel4', position: {x: -6.2, y: 6, z: 16}},
+        {id: 'marker5', panelId: 'panel5', position: {x: 27, y: 6, z: 27}},
+        {id: 'marker6', panelId: 'panel6', position: {x: 6, y: 5, z: 0}},
+        {id: 'marker8', panelId: 'panel8', position: {x: 32, y: 5, z: 0}},
+        {id: 'marker11', panelId: 'panel11', position: {x: -5.6, y: 6, z: -16.5}},
+        {id: 'marker13', panelId: 'panel13', position: {x: 14, y: 4, z: 7}},
+        {id: 'marker14', panelId: 'panel14', position: {x: -2, y: 4, z: -33}}
     ];
 
     const vector = new THREE.Vector3();

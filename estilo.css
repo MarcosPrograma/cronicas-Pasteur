@@ -262,6 +262,8 @@ header {
   right: -30%;
   transition: right 0.3s ease;
   z-index: 4;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #panel_menu h2 {
@@ -284,6 +286,7 @@ header {
   width: fit-content;
   text-align: left;
   position: absolute;
+  padding-bottom: 2rem;
 }
 
 .panel_menu_opciones_botones {
@@ -291,13 +294,12 @@ header {
   flex-direction: column;
   gap: 1rem;
   padding-left: 1.5rem;
-
 }
 
 .panel_menu_opciones_botones button {
   background-color: #4F6F52;
   color: #F1F1F1;
-  width: 100;
+  width: 100%;
   border-radius: 40px;
   border: none;
   font-family: "Montserrat", sans-serif;
@@ -376,13 +378,13 @@ header {
   margin-left: 1.2rem;
   margin-right: 2rem;
   padding: 0;
-  line-height: 22px;
+  line-height: 1.6rem;
 }
 
 .panelDesplegable button {
   background-color: #4F6F52;
   color: #F1F1F1;
-  width: 300px;
+  width: 90%;
   border-radius: 40px;
   border: none;
   font-family: "Montserrat", sans-serif;
@@ -522,7 +524,7 @@ header {
   }
 
   #pantalla-carga p {
-    font-size: 14px;
+    font-size: 1.2rem;
   }
 
   /* ------ Header ------ */
@@ -580,12 +582,13 @@ header {
 
   .stepper h2 {
     text-align: center;
-    font-size: 13px;
+    font-size: 1rem;
   }
 
   .stepper p {
     text-align: left;
-    font-size: 11px;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
   }
 
   .stepper img {
@@ -596,10 +599,10 @@ header {
   .siguiente-step,
   .final-step,
   .cierreStepper {
-    font-size: 12px;
+    font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
     border-radius: 15px;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
   }
 
   .cierreStepper {
@@ -618,25 +621,26 @@ header {
   }
 
   #panel_menu h2 {
-    padding-left: 2rem;
+    padding-left: 1.5rem;
     padding-top: 3rem;
     padding-bottom: 1rem;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .panel_menu_opciones {
     width: 100%;
     text-align: left;
-    font-size: 14px;
   }
 
   .panel_menu_opciones_botones {
     padding-left: 0;
+    
   }
 
   .panel_menu_opciones_botones button {
     width: 90%;
     margin: 0 auto;
+    font-size: 0.8rem;
   }
 
   .cerrar {
@@ -658,20 +662,19 @@ header {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.5rem;
-    padding-bottom: 0;
-    font-size: 14px;
+    font-size: 1.1rem;
   }
 
   .panelDesplegable p {
     margin-left: 1rem;
-    margin-right: 1rem;
-    font-size: 12px;
-    line-height: 16px;
+    margin-right: 1rem; 
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .panelDesplegable button {
-    width: 70%;
-    font-size: 10px;
+    width: 90%;
+    font-size: 0.9rem;
     margin-top: 1rem;
   }
 
@@ -691,5 +694,205 @@ header {
   .carrusel-bot-sig {
     width: 2rem;
     height: 2rem;
+  }
+}
+/* ------ Media Query dispositivos móviles horizontales y tablets */
+@media (max-width: 1024px) and (orientation: landscape) {
+  html, body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+  /*---- Pantalla de carga ---- */
+  #pantalla-carga img {
+    width: 25%;
+    margin-bottom: 1rem;
+  }
+
+  #barra-carga-contenedor {
+    width: 30%;
+    height: 15px;
+    margin-bottom: 1rem;
+  }
+
+  #pantalla-carga p {
+    font-size: 14px;
+  }
+
+  /* ------ Header ------ */
+  header {
+    display: flex;
+    padding: 1.1rem 0 0 1.5rem;
+    width: 90%;
+    left: 0;
+    top: 0;
+  }
+
+  header img{
+    width: 5%;
+    height: auto;
+  }
+
+  .header-title {
+    font-size: 12px;
+    margin-left: 3rem;
+  }
+
+  /* ------ Barra de navegación ------ */
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    top: 1.5rem;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    width: auto;
+  }
+
+  .nav-list li {
+    width: auto;
+  }
+
+  .nav-list li a {
+    width: auto;
+    font-size: 12px;
+    text-align: right;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* ------ Stepper ------ */
+  .stepper {
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .stepper h2 {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .stepper p {
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .stepper img {
+    width: 90px;
+    height: auto;
+  }
+
+  .siguiente-step,
+  .final-step,
+  .cierreStepper {
+    font-size: 11px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 15px;
+    margin-top: 0.5rem;
+  }
+
+  .cierreStepper {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  /* ------ Menú ------ */
+  #panel_menu {
+    width: 40%;
+    right: -40%;
+  }
+
+  #panel_menu.mostrar {
+    right: 0;
+  }
+
+  #panel_menu h2 {
+    padding-left: 1.2rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .panel_menu_opciones {
+    width: 100%;
+    text-align: left;
+  }
+
+  .panel_menu_opciones_botones {
+    padding-left: 0;
+  }
+
+  .panel_menu_opciones_botones button {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.7rem;
+  }
+
+  .cerrar {
+    padding: 1rem;
+    max-width: 15%;
+    width: 100%;
+    height: auto;
+  }
+
+  /*---- Paneles desplegables ---- */
+  .panelDesplegable {
+    width: 40%;
+    left: -40%;
+    padding-bottom: 4rem;
+  }
+
+  .panelDesplegable.mostrar {
+    left: 0;
+  }
+
+  .panelDesplegable h2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 20px;
+  }
+
+  .panelDesplegable p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+
+  .panelDesplegable button {
+    width: 90%;
+    font-size: 11px;
+    margin-top: 1rem;
+    padding: 0.7rem;
+  }
+
+  .botonesPaneles {
+    gap: 0rem;
+    margin-top: 0;
+  }
+
+  /*---- Carrusel ---- */
+  .carrusel {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+  
+  .carrusel-bot-ant,
+  .carrusel-bot-sig {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
