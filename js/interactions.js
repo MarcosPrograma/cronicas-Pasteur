@@ -7,18 +7,17 @@ export function interacciones() {
         const cerrar = document.querySelectorAll('.cerrar');
         const paneles = document.querySelectorAll('.panelDesplegable'); //Paneles de info
         const panel_menu = document.getElementById('panel_menu'); //Menu
-        //const contenedorMarcadores = document.getElementById('marcadores-contenedor');
+        const divInvisible = document.getElementById('divInvisible'); //Fondo negro
         let panelActualmenteAbierto = null;
 
-        /*Ocultar los marcadores
-        function toggleMarcadores(visible){
-            console.log('toggleMarcadores:', visible);
-            if (visible){
-                contenedorMarcadores.classList.remove('oculto');
+        function actualizarDivInvisible() {
+            const algunPanelAbierto = Array.from(paneles).some(panel => panel.classList.contains('mostrar'));
+            if (algunPanelAbierto || panel_menu.classList.contains('mostrar')) {
+                divInvisible.classList.add('mostrar');
             } else {
-                contenedorMarcadores.classList.add('oculto');
+                divInvisible.classList.remove('mostrar');
             }
-        }*/
+        }
 
         //Apertura de los paneles
         abrir.forEach(boton => {
@@ -34,12 +33,13 @@ export function interacciones() {
                 if (targetPanel) {
                     targetPanel.classList.toggle('mostrar');
                     panelActualmenteAbierto = targetPanel.classList.contains('mostrar') ? targetPanel : null;
-                    //toggleMarcadores(!panelActualmenteAbierto);
                 }
 
                 if (panel_menu) {
                     panel_menu.classList.add('mostrar');
                 }
+
+                actualizarDivInvisible();
             });
         });
 
@@ -59,43 +59,43 @@ export function interacciones() {
                         panelActualmenteAbierto = panel;
                     }
                 });
-                
-                /*
-                if(!algunPanelAbierto){
-                    toggleMarcadores(true);
-                }
-                */
 
                 if (panel_menu) {
                     panel_menu.classList.remove('mostrar');
                 }
+
+                actualizarDivInvisible();
             });
         });
 
-        /*
-        if(panel_menu){
-            panel_menu.addEventListener('cierrePanel', function() {
-                toggleMarcadores(!panel_menu.classList.contains('mostrar'));
+        divInvisible.addEventListener('click', function () {
+            paneles.forEach(panel => {
+                panel.classList.remove('mostrar');
             });
-        }
-        */
+            panel_menu.classList.remove('mostrar');
+            actualizarDivInvisible();
+        });
     });
 }
 
 //----------- Marcadores ------------
 export function marcadores(scene, camera) {
     const contenedor = document.getElementById('marcadores-contenedor');
+    const divInvisible = document.getElementById('divInvisible'); // Fondo negro
     const marcadores = [
-        {id: 'marker1', panelId: 'panel1', position: {x: 1.5, y: 5, z: 1.5}},
-        {id: 'marker2', panelId: 'panel2', position: {x: 6, y: 6, z: 29}},
-        {id: 'marker3', panelId: 'panel3', position: {x: -30, y: 6, z: -1}},
-        {id: 'marker4', panelId: 'panel4', position: {x: -6.2, y: 6, z: 16}},
-        {id: 'marker5', panelId: 'panel5', position: {x: 27, y: 6, z: 27}},
-        {id: 'marker6', panelId: 'panel6', position: {x: 6, y: 5, z: 0}},
-        {id: 'marker8', panelId: 'panel8', position: {x: 32, y: 5, z: 0}},
-        {id: 'marker11', panelId: 'panel11', position: {x: -5.6, y: 6, z: -16.5}},
-        {id: 'marker13', panelId: 'panel13', position: {x: 14, y: 4, z: 7}},
-        {id: 'marker14', panelId: 'panel14', position: {x: -2, y: 4, z: -33}}
+        { id: 'marker1', panelId: 'panel1', position: { x: 1.5, y: 5, z: 1.5 } },
+        { id: 'marker2', panelId: 'panel2', position: { x: 6, y: 6, z: 29 } },
+        { id: 'marker3', panelId: 'panel3', position: { x: -30, y: 6, z: -1 } },
+        { id: 'marker4', panelId: 'panel4', position: { x: -6.2, y: 6, z: 16 } },
+        { id: 'marker5', panelId: 'panel5', position: { x: 27, y: 6, z: 27 } },
+        { id: 'marker6', panelId: 'panel6', position: { x: 6, y: 5, z: 0 } },
+        { id: 'marker7', panelId: 'panel7', position: { x: -20, y: 5, z: -27 } },
+        { id: 'marker8', panelId: 'panel8', position: { x: 32, y: 5, z: 0 } },
+        { id: 'marker10', panelId: 'panel10', position: { x: 14, y: 4, z: 4 } },
+        { id: 'marker11', panelId: 'panel11', position: { x: -5.6, y: 6, z: -16.5 } },
+        { id: 'marker12', panelId: 'panel12', position: { x: -6, y: 5, z: -26.5 } },
+        { id: 'marker13', panelId: 'panel13', position: { x: 14, y: 4, z: 8 } },
+        { id: 'marker14', panelId: 'panel14', position: { x: -2, y: 4, z: -33 } }
     ];
 
     const vector = new THREE.Vector3();
@@ -111,9 +111,13 @@ export function marcadores(scene, camera) {
                 contenedor.appendChild(marcadorElement);
 
                 marcadorElement.addEventListener('click', () => {
+
                     const panel = document.getElementById(marcador.panelId);
                     document.querySelectorAll('.panelDesplegable').forEach(p => p.classList.remove('mostrar'));
-                    if (panel) panel.classList.add('mostrar');
+                    if (panel) {
+                        panel.classList.add('mostrar');
+                        divInvisible.classList.add('mostrar');
+                    }
                 });
             }
 
@@ -126,6 +130,13 @@ export function marcadores(scene, camera) {
             marcadorElement.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
         });
     }
+
+    divInvisible.addEventListener('click', () => {
+        document.querySelectorAll('.panelDesplegable').forEach(panel => {
+            panel.classList.remove('mostrar');
+        });
+        divInvisible.classList.remove('mostrar');
+    });
 
     return actualizarMarcadorPosicion;
 }
@@ -171,15 +182,15 @@ export function iniciarCarrusel() {
 }
 
 //----------- Stepper ------------
-export function stepper(){
+export function stepper() {
     let actualStep = 1;
 
     //Funciones    
-    function pasoSiguiente(){
+    function pasoSiguiente() {
         const actualElement = document.querySelector(`.step[data-step="${actualStep}"]`);
         const siguienteElement = document.querySelector(`.step[data-step="${actualStep + 1}"]`);
 
-        if(siguienteElement){
+        if (siguienteElement) {
             actualElement.classList.remove('activo');
             siguienteElement.classList.add('activo');
             actualStep++;
@@ -187,7 +198,7 @@ export function stepper(){
     }
 
     //------------------------------------------------------------------
-    function terminarPaso(){
+    function terminarPaso() {
         const overlay = document.getElementById('stepperFondo-overlay');
         const stepper = document.getElementById('stepper-overlay');
 
@@ -195,7 +206,7 @@ export function stepper(){
         overlay.classList.remove('visible');
         stepper.classList.remove('visible');
 
-        setTimeout(() =>{
+        setTimeout(() => {
             overlay.style.display = 'none';
         }, 500);
 
@@ -203,7 +214,7 @@ export function stepper(){
     }
 
     //------------------------------------------------------------------
-    function mostrarStepper(step = 1){
+    function mostrarStepper(step = 1) {
         const overlay = document.getElementById('stepperFondo-overlay');
         const stepper = document.getElementById('stepper-overlay');
 
@@ -228,7 +239,7 @@ export function stepper(){
     });
 
     document.querySelector('.final-step').addEventListener('click', terminarPaso);
-    document.querySelector('#mostrarStepper').addEventListener('click', (e) =>{
+    document.querySelector('#mostrarStepper').addEventListener('click', (e) => {
         e.preventDefault();
         mostrarStepper(2);
     });

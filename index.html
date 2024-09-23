@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crónicas de Pasteur</title>
   <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="src/img/favicon.ico" type="image/x-icon">
@@ -107,7 +108,7 @@
           <button class="abrir" data-target="panel12">12. Trío Pasteur</button>
           <button class="abrir" data-target="panel13">13. Centro Educativo Complementario N°803</button>
           <button class="abrir" data-target="panel14">14. Festival Nacional de Folklore de Pasteur</button>
-          <button class="abrir" data-target="panel15">15. Geriátrico "Dr. Raúl A. Cabaleiro"</button>    
+          <button class="abrir" data-target="panel15">15. Geriátrico "Dr. Raúl A. Cabaleiro"</button>
         </div>
       </div>
     </div>
@@ -116,6 +117,7 @@
     <div id="marcadores-contenedor"></div>
 
     <!-- ------------------------ Panel desplegables ------------------------ -->
+    <div id="divInvisible"></div>
     <div id="panel1" class="panelDesplegable">
       <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
       <div class="carrusel">
@@ -136,7 +138,7 @@
         </div>
       </div>
       <h2>Manuel Antonio García Meijón (1856-1942)</h2>
-      <p><br>Nació el 5 de abril de 1856 en un pueblo de Cotobad, Pontevedra, Galicia, España. Sus padres fueron José
+      <p><br>Nació el 5 de abril de 1856 en el pueblo de Cotobad, Galicia, España. Sus padres fueron José
         García y
         María Meijón. Arribó a nuestro país en 1874 y comenzó a trabajar en una despensa de la ciudad de Junín, así como
         también lo hizo en las ciudades de San Antonio de Areco y San Andrés de Giles. En 1882 se estableció en Lincoln
@@ -170,8 +172,8 @@
           <img src="src/img/piamontesa3.jpg" alt="Fachada lateral del hotel" class="carrusel-imagen">
           <img src="src/img/piamontesa4.jpg" alt="Fachada frontal del hotel antes de ser derrumbado"
             class="carrusel-imagen">
-            <img src="src/img/piamontesa5.jpg" alt="Fachada frontal del hotel pre-demolición" class="carrusel-imagen">
-            <img src="src/img/piamontesa6.jpg" alt="Adentro del hotel pre-demolición" class="carrusel-imagen">
+          <img src="src/img/piamontesa5.jpg" alt="Fachada frontal del hotel pre-demolición" class="carrusel-imagen">
+          <img src="src/img/piamontesa6.jpg" alt="Adentro del hotel pre-demolición" class="carrusel-imagen">
         </div>
         <div>
           <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
@@ -416,13 +418,11 @@
           <img src="src/img/drRaulCabaleiro1.jpg" alt="Foto de libreta de enrolamiento" class="carrusel-imagen">
           <img src="src/img/drRaulCabaleiro2.jpg" alt="Raúl Cabaleiro en el casamiento de su hija"
             class="carrusel-imagen">
-          <img src="src/img/drRaulCabaleiro3.jpg" alt="Acto en la Unidad Sanitaria"
-            class="carrusel-imagen">
+          <img src="src/img/drRaulCabaleiro3.jpg" alt="Acto en la Unidad Sanitaria" class="carrusel-imagen">
           <img src="src/img/drRaulCabaleiro4.jpg" alt="Familia Cabaleiro" class="carrusel-imagen">
           <img src="src/img/drRaulCabaleiro5.jpg" alt="Raúl Cabaleiro con su hija" class="carrusel-imagen">
           <img src="src/img/drRaulCabaleiro6.jpg" alt="Raúl Cabaleiro con su esposa" class="carrusel-imagen">
           <img src="src/img/drRaulCabaleiro7.jpg" alt="Raúl cuidando de su huerta" class="carrusel-imagen">
-          <img src="src/img/drRaulCabaleiro8.jpg" alt="Raúl en sus últimos años" class="carrusel-imagen">
         </div>
         <div>
           <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
@@ -504,17 +504,8 @@
 
     <div id="panel9" class="panelDesplegable">
       <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
-      <div class="carrusel">
-        <div class="carrusel-imagenes">
-          <img src="src/img/clubAtleticoPasteur1.jpg" alt="Equipo del CAPYFCO" class="carrusel-imagen">
-        </div>
-        <div>
-          <img class="carrusel-bot-ant" src="src/img/flecha-ant.png" alt="Botón de anterior">
-          <img class="carrusel-bot-sig" src="src/img/flecha-sig.png" alt="Botón de siguiente">
-        </div>
-      </div>
       <h2>Unidad Sanitaria</h2>
-      <p><br>Inició sus actividades el 11 de octubre de 1950 y fue inaugurada oficialmente el 12 de noviembre del mismo
+      <p>Inició sus actividades el 11 de octubre de 1950 y fue inaugurada oficialmente el 12 de noviembre del mismo
         año. En un principio, contaba con un médico directo, una enfermera recibida y dos enfermeras sin título, además
         de cinco empleados. La instalación tiene cuatro salas de internación (dos grandes y dos chicas), una sala de
         operaciones, una sala de parto, una sala de rayos, un consultorio, una morgue, una farmacia, una sala de
@@ -542,11 +533,29 @@
         </div>
       </div>
       <h2>Jardin de Infantes N°902 “Sara Chamberlain De Eccleston”</h2>
-      <p><br>Es un jardín de infantes rural de gestión pública ubicado en la Avenida San Martín. Su historia comienza en el año 1961, cuando la directora de la Escuela Primaria N.º 22 “Luis Pasteur”, Emma Diana de Vicente, solicitó la creación de un preescolar, pero fue denegada debido a la falta de un edificio con las condiciones adecuadas. En 1962, se obtuvieron las instalaciones necesarias y, al año siguiente, se iniciaron las gestiones en la ciudad de La Plata.</br>
-        <br>Durante el año 1964, con la ayuda de los habitantes y una cooperadora, se consiguieron, a través de donaciones, los muebles adecuados para el jardín. Asimismo, la institución fue inaugurada por decreto. Cabe destacar que Estancias y Cabañas “Las Lilas” donó varios elementos como el mástil y la bandera. Incluso, un pequeño parque recreativo con hamacas, calesitas, arenero, tobogán, entre otros juegos, fue donado por comercios locales como “LaFuente y Trubbo”, “La Unión” y “Casa Pereda”. En ese momento, la institución funcionaba en un local cedido por la Escuela Primaria N.º 22 “Luis Pasteur”, que anteriormente servía como casa-habitación.</br>
-        <br>Consecuentemente, el jardín comenzó a operar en 1965, bajo la dirección de la Sra. Irma Sylvia Trubbo. Hasta 1969, funcionó en el mismo edificio de la Escuela Primaria N.º 22. Posteriormente, durante el período de 1970 a 1974, se trasladó a la esquina de la Av. Montes e Independencia. Luego, entre 1975 y 1976, estuvo ubicado sobre la calle Sarmiento, entre Maipú y la Av. Mitre, hasta que volvió a funcionar en la Escuela Primaria N.º 22 desde 1975 hasta 1985.</br>
-        <br>El 25 de mayo de 1985 se inauguró el nuevo y actual edificio, el cual fue adquirido por la Cooperadora y donado al Ministerio de Gobierno de la Provincia de Buenos Aires para que comenzara la construcción.</br>
-        <br>Para 1994, ya contaba con un equipo de psicología o equipo de orientación escolar. Además, en ese entonces, la matrícula era de 120 alumnos, de los cuales egresaban entre 40 y 45. Actualmente, la institución cuenta con un parque más amplio con juegos recreativos, cuatro aulas equipadas con elementos y mobiliario específico para los infantes, baños diferenciados para niños, niñas y docentes, una cocina, una dirección, dos depósitos, un Salón de Usos Múltiples (SUM) y una sala de música.</br>
+      <p><br>Es un jardín de infantes rural de gestión pública ubicado en la Avenida San Martín. Su historia comienza en
+        el año 1961, cuando la directora de la Escuela Primaria N.º 22 “Luis Pasteur”, Emma Diana de Vicente, solicitó
+        la creación de un preescolar, pero fue denegada debido a la falta de un edificio con las condiciones adecuadas.
+        En 1962, se obtuvieron las instalaciones necesarias y, al año siguiente, se iniciaron las gestiones en la ciudad
+        de La Plata.</br>
+        <br>Durante el año 1964, con la ayuda de los habitantes y una cooperadora, se consiguieron, a través de
+        donaciones, los muebles adecuados para el jardín. Asimismo, la institución fue inaugurada por decreto. Cabe
+        destacar que Estancias y Cabañas “Las Lilas” donó varios elementos como el mástil y la bandera. Incluso, un
+        pequeño parque recreativo con hamacas, calesitas, arenero, tobogán, entre otros juegos, fue donado por comercios
+        locales como “LaFuente y Trubbo”, “La Unión” y “Casa Pereda”. En ese momento, la institución funcionaba en un
+        local cedido por la Escuela Primaria N.º 22 “Luis Pasteur”, que anteriormente servía como casa-habitación.</br>
+        <br>Consecuentemente, el jardín comenzó a operar en 1965, bajo la dirección de la Sra. Irma Sylvia Trubbo. Hasta
+        1969, funcionó en el mismo edificio de la Escuela Primaria N.º 22. Posteriormente, durante el período de 1970 a
+        1974, se trasladó a la esquina de la Av. Montes e Independencia. Luego, entre 1975 y 1976, estuvo ubicado sobre
+        la calle Sarmiento, entre Maipú y la Av. Mitre, hasta que volvió a funcionar en la Escuela Primaria N.º 22 desde
+        1975 hasta 1985.</br>
+        <br>El 25 de mayo de 1985 se inauguró el nuevo y actual edificio, el cual fue adquirido por la Cooperadora y
+        donado al Ministerio de Gobierno de la Provincia de Buenos Aires para que comenzara la construcción.</br>
+        <br>Para 1994, ya contaba con un equipo de psicología o equipo de orientación escolar. Además, en ese entonces,
+        la matrícula era de 120 alumnos, de los cuales egresaban entre 40 y 45. Actualmente, la institución cuenta con
+        un parque más amplio con juegos recreativos, cuatro aulas equipadas con elementos y mobiliario específico para
+        los infantes, baños diferenciados para niños, niñas y docentes, una cocina, una dirección, dos depósitos, un
+        Salón de Usos Múltiples (SUM) y una sala de música.</br>
       </p>
     </div>
 
@@ -595,18 +604,44 @@
         </div>
       </div>
       <h2>Trío Pasteur (1986)</h2>
-      <p><br>El Trío Pasteur es un conjunto de música folclórica compuesto por Castro, Grande y Muñoz, tres músicos autodidactas que, desde sus inicios en 1986, han dejado una huella imborrable en la música popular de la región.</br>
-        <br>El trío surgió casi por casualidad durante una fiesta familiar en Pasteur, donde Norberto “Tito” Muñoz, Francisco “Pichón” Grande y “Chirola” Ibáñez se encontraron compartiendo su amor por la música. Aunque comenzaron como un pasatiempo, pronto se profesionalizaron a pesar de no contar con formación musical formal. Inicialmente, Muñoz era la primera voz y tocaba el bombo, mientras que Ibañez y Grande se encargaban de las guitarras.</br>
-        <br>Sin embargo, por cuestiones laborales y la distancia, Ibañez tuvo que abandonar el grupo, siendo reemplazado por “Pati” Castro, quien asumió la primera guitarra y la tercera voz, mientras que Grande pasó a ser la segunda guitarra y segunda voz.</br>
-        </br>El Trío Pasteur comenzó tocando en su localidad natal, pero no tardaron en ganar reconocimiento regional. Su primera gran victoria fue en un festival en Tres Algarrobos, donde ganaron un premio que los llevó a actuar en la radio y televisión locales. A partir de ahí, el grupo participó en importantes festivales, como el de San Gregorio en 1988, donde presentaron la famosa "Zamba para Pasteur", obteniendo el primer lugar en las categorías de canción inédita y canto. El trío siguió recorriendo localidades como General Pinto y Luján, y se presentaron en numerosas radios y televisiones regionales, donde fueron bien recibidos por parte del público.</br>
-        <br>El gran salto a nivel nacional llegó en 1994, cuando se presentaron en el Festival Nacional de Música Popular de Baradero, ganando el concurso y obteniendo como premio una actuación televisada y la grabación de un cassette. Ese mismo año, participaron en el prestigioso Festival Nacional de Folklore de Cosquín, consolidándose como un grupo destacado en la escena folclórica Argentina.</br>
-        <br>El estilo musical del Trío Pasteur estaba influenciado por artistas de renombre como César Isella, Argentino Luna y Waldemar Lagos, entre otros. Grande, quien componía gran parte de las canciones del grupo, se inspira en personajes de la localidad y en temáticas propias del folclore tradicional. Definía su estilo como "norteño" y "carpero", una mezcla de sonidos arraigados en el folclore más puro.</br>
-        <br>El trío grabó tres cassettes y discos, con un proceso de grabación que reflejaba el trabajo en equipo: mientras uno componía, el resto se encargaba de ensayar y crear las bases musicales. El primer cassette fue grabado en Buenos Aires, y los siguientes en Junín.</br>
-        <br>Con el paso del tiempo, la avanzada edad de los integrantes comenzó a afectar la actividad del grupo. Además, la muerte de una persona muy cercana a Castro y Grande influyó profundamente en la continuidad del trío. Actualmente, el Trío Pasteur sigue activo de manera esporádica, tocando en el Festival Nacional de Folklore de Pasteur y en otras oportunidades, manteniendo viva la llama de la música folclórica que tanto aman y transmitiendo su legado a las futuras generaciones.</br>
+      <p><br>El Trío Pasteur es un conjunto de música folclórica compuesto por Castro, Grande y Muñoz, tres músicos
+        autodidactas que, desde sus inicios en 1986, han dejado una huella imborrable en la música popular de la
+        región.</br>
+        <br>El trío surgió casi por casualidad durante una fiesta familiar en Pasteur, donde Norberto “Tito” Muñoz,
+        Francisco “Pichón” Grande y “Chirola” Ibáñez se encontraron compartiendo su amor por la música. Aunque
+        comenzaron como un pasatiempo, pronto se profesionalizaron a pesar de no contar con formación musical formal.
+        Inicialmente, Muñoz era la primera voz y tocaba el bombo, mientras que Ibañez y Grande se encargaban de las
+        guitarras.</br>
+        <br>Sin embargo, por cuestiones laborales y la distancia, Ibañez tuvo que abandonar el grupo, siendo reemplazado
+        por “Pati” Castro, quien asumió la primera guitarra y la tercera voz, mientras que Grande pasó a ser la segunda
+        guitarra y segunda voz.</br>
+        </br>El Trío Pasteur comenzó tocando en su localidad natal, pero no tardaron en ganar reconocimiento regional.
+        Su primera gran victoria fue en un festival en Tres Algarrobos, donde ganaron un premio que los llevó a actuar
+        en la radio y televisión locales. A partir de ahí, el grupo participó en importantes festivales, como el de San
+        Gregorio en 1988, donde presentaron la famosa "Zamba para Pasteur", obteniendo el primer lugar en las categorías
+        de canción inédita y canto. El trío siguió recorriendo localidades como General Pinto y Luján, y se presentaron
+        en numerosas radios y televisiones regionales, donde fueron bien recibidos por parte del público.</br>
+        <br>El gran salto a nivel nacional llegó en 1994, cuando se presentaron en el Festival Nacional de Música
+        Popular de Baradero, ganando el concurso y obteniendo como premio una actuación televisada y la grabación de un
+        cassette. Ese mismo año, participaron en el prestigioso Festival Nacional de Folklore de Cosquín, consolidándose
+        como un grupo destacado en la escena folclórica Argentina.</br>
+        <br>El estilo musical del Trío Pasteur estaba influenciado por artistas de renombre como César Isella, Argentino
+        Luna y Waldemar Lagos, entre otros. Grande, quien componía gran parte de las canciones del grupo, se inspira en
+        personajes de la localidad y en temáticas propias del folclore tradicional. Definía su estilo como "norteño" y
+        "carpero", una mezcla de sonidos arraigados en el folclore más puro.</br>
+        <br>El trío grabó tres cassettes y discos, con un proceso de grabación que reflejaba el trabajo en equipo:
+        mientras uno componía, el resto se encargaba de ensayar y crear las bases musicales. El primer cassette fue
+        grabado en Buenos Aires, y los siguientes en Junín.</br>
+        <br>Con el paso del tiempo, la avanzada edad de los integrantes comenzó a afectar la actividad del grupo.
+        Además, la muerte de una persona muy cercana a Castro y Grande influyó profundamente en la continuidad del trío.
+        Actualmente, el Trío Pasteur sigue activo de manera esporádica, tocando en el Festival Nacional de Folklore de
+        Pasteur y en otras oportunidades, manteniendo viva la llama de la música folclórica que tanto aman y
+        transmitiendo su legado a las futuras generaciones.</br>
       </p>
       <h2>Contenido relacionado</h2>
       <div class="botonesPaneles">
-        <a href="https://youtube.com/playlist?list=PLEq0xpAgg2s3RzXHWxLWg1R2l0FokGszU&feature=shared" target="_blank"><button>Escuchar canciones</button></a>
+        <a href="https://youtube.com/playlist?list=PLEq0xpAgg2s3RzXHWxLWg1R2l0FokGszU&feature=shared"
+          target="_blank"><button>Escuchar canciones</button></a>
       </div>
     </div>
 
@@ -699,6 +734,34 @@
     </div>
 
     <!-- ------------------------ Footer ------------------------ -->
+    <div id="acercaDe">
+      <img class="cerrar" src="src/img/cierre.png" alt="Cerrar">
+      <h2>Acerca de</h2>
+      <p><br><b>Crónicas de Pasteur</b> es un proyecto desarrollado como parte de mi tesis para la Cátedra de Diseño
+        Multimedial V de la carrera de Diseño Multimedial en la Facultad de Artes, Universidad Nacional de La Plata,
+        Buenos Aires, Argentina.<br>
+        <br>Este trabajo tiene como objetivo la creación de un sitio web interactivo que permita el acceso a
+        información histórica sobre la localidad de Pasteur, ubicada al noroeste de la Provincia de Buenos Aires. A
+        través de esta plataforma, se busca crear una musealización virtual, centrada en la exposición de datos
+        históricos, utilizando diversas estrategias multimedia y herramientas digitales como imágenes, videos, sonidos
+        y textos. Este proyecto nace de la necesidad de dar visibilidad a la historia de localidades como Pasteur, que
+        carecen de suficiente documentación, y demostrar cómo los medios digitales pueden ser una herramienta eficaz
+        para comunicar y preservar su patrimonio.<br>
+        <br>Quiero expresar mi más sincero agradecimiento a los habitantes y ex-habitantes de Pasteur, quienes no solo
+        compartieron sus valiosos testimonios durante las entrevistas, sino que también facilitaron una rica fuente de
+        archivos y datos. Agradezco también el apoyo de las instituciones nacionales y municipales del partido de
+        Lincoln.<br>
+        <br>De manera especial, extiendo mi gratitud a la delegación de Pasteur por su inestimable
+        colaboración y por proporcionar material fotográfico del Museo Municipal “Manuel A. García”. Del mismo modo,
+        agradezco a Silvia Aguirre, Hugo Moralejo, Gloria Cabaleiro y Guillermo De Vega, por su contribución con
+        materiales fotográficos y digitales. También deseo agradecer a las directoras Vanesa Grande, Silvia Agüero,
+        Mayra López y
+        Marisa Calles por su disposición de las instituciones y apoyo continuo. Finalmente, expreso mi reconocimiento
+        al Archivo Histórico Municipal de Lincoln "Prof. Andrés R. Allende" por su colaboración en proporcionar
+        valiosa información y documentación.<br>
+        <br>Este sitio web fue desarrollado utilizando Blender, HTML, CSS, JavaScript y Three.js.<br>
+      </p>
+    </div>
   </div>
   <!-- ------------------------ Script ------------------------ -->
   <script type="module" src="main.js"></script>

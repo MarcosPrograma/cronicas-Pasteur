@@ -24,16 +24,15 @@ cargarObjeto('/models/trainEstacion.gltf', 'panel3', scene, {x: -30, y: 1.6, z: 
 cargarObjeto('/models/escuelaPrimaria.gltf', 'panel4', scene, {x: -6.2, y: 1.6, z: 16});
 cargarObjeto('/models/iglesia.gltf', 'panel5', scene, {x: 27, y: 1.8, z: 27});
 cargarObjeto('/models/camaraPelicula.gltf', 'panel6', scene, {x: 6, y: 1.6, z: 0});
-//Raul cabaleiro
+cargarObjeto('/models/monumento2.gltf', 'panel7', scene, {x: -20, y: 1.8, z: -27});
 cargarObjeto('/models/clubAtleticoPast.gltf', 'panel8', scene, {x: 33, y: 1.6, z: -2});
 //Unidad sanitaria
-//Jardin de infantes 
+cargarObjeto('/models/jardin.gltf', 'panel10', scene, {x: 14, y: 1.6, z: 5});
 cargarObjeto('/models/secundaria.gltf', 'panel11', scene, {x: -5.6, y: 1.6, z: -16.5});
-//Trio
-cargarObjeto('/models/CEC.gltf', 'panel13', scene, {x: 15, y: 1.6, z: 5.5});
+cargarObjeto('/models/monumento3.gltf', 'panel12', scene, {x: -6, y: 1.8, z: -26.5});
+cargarObjeto('/models/CEC.gltf', 'panel13', scene, {x: 14, y: 1.6, z: 6});
 cargarObjeto('/models/festival.gltf', 'panel14', scene, {x: -2, y: 1.6, z: -30});
 //Geriatrico
-
 
 //Lucecita
 setearLuces(scene);

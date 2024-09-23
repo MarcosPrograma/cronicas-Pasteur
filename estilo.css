@@ -24,8 +24,6 @@ body {
 body {
   background: #E0FBE2;
   font-family: "Montserrat", sans-serif;
-  font-size: auto;
-  font-weight: weight;
   font-style: normal;
   overflow: hidden;
 }
@@ -214,7 +212,6 @@ p {
 }
 
 /* ------------------------ Barra de navegación ------------------------ */
-
 header {
   display: flex;
   align-items: center;
@@ -261,7 +258,7 @@ header {
   background-color: #ECE3CE;
   right: -30%;
   transition: right 0.3s ease;
-  z-index: 4;
+  z-index: 5;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -283,7 +280,7 @@ header {
 }
 
 .panel_menu_opciones {
-  width: fit-content;
+  width: 90%;
   text-align: left;
   position: absolute;
   padding-bottom: 2rem;
@@ -351,6 +348,21 @@ header {
 }
 
 /* ------------------------ Pestanas desplegables ------------------------  */
+#divInvisible{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  display: none;
+}
+
+#divInvisible.mostrar{
+  display: block;
+}
+
 .panelDesplegable {
   position: absolute;
   width: 40%;
@@ -360,7 +372,7 @@ header {
   transition: left 0.3s ease;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 4;
+  z-index: 5;
   padding-bottom: 2rem; 
 }
 
@@ -451,6 +463,36 @@ header {
 
 .carrusel-bot-ant {
   left: 1rem;
+}
+
+/* --------- Acerca de --------- */
+#acercaDe {
+  position: absolute;
+  width: 40%;
+  height: 100vh;
+  background-color: #ECE3CE;
+  right: -40%;
+  transition: right 0.3s ease;
+  z-index: 5;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#acercaDe h2 {
+  padding-left: 1.5rem;
+  padding-top: 2rem;
+}
+
+#acercaDe p {
+  margin-left: 1.5rem;
+  margin-right: 2rem;
+  padding: 0;
+  line-height: 1.6rem;
+  padding-bottom: 1rem;
+}
+
+#acercaDe.mostrar {
+  right: 0;
 }
 
 /* --------- Keyframes --------- */
@@ -696,6 +738,7 @@ header {
     height: 2rem;
   }
 }
+
 /* ------ Media Query dispositivos móviles horizontales y tablets */
 @media (max-width: 1024px) and (orientation: landscape) {
   html, body {
@@ -894,5 +937,28 @@ header {
   .carrusel-bot-sig {
     width: 1.5rem;
     height: 1.5rem;
+  }
+}
+
+/* ------ Media Query para pantallas grandes */
+@media (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+
+  .nav-list {
+    gap: 8rem; 
+  }  
+
+  .stepper {
+    max-width: 1000px; 
+  }
+
+  .stepper img {
+    width: 60%;
+  }
+
+  #pantalla-carga img {
+    width: 15%;
   }
 }
