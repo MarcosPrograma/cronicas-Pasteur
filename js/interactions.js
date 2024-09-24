@@ -80,20 +80,21 @@ export function interacciones() {
 export function marcadores(scene, camera) {
     const contenedor = document.getElementById('marcadores-contenedor');
     const divInvisible = document.getElementById('divInvisible'); // Fondo negro
+
     const marcadores = [
-        { id: 'marker1', panelId: 'panel1', position: { x: 1.5, y: 5, z: 1.5 } },
-        { id: 'marker2', panelId: 'panel2', position: { x: 6, y: 6, z: 29 } },
-        { id: 'marker3', panelId: 'panel3', position: { x: -30, y: 6, z: -1 } },
-        { id: 'marker4', panelId: 'panel4', position: { x: -6.2, y: 6, z: 16 } },
-        { id: 'marker5', panelId: 'panel5', position: { x: 27, y: 6, z: 27 } },
-        { id: 'marker6', panelId: 'panel6', position: { x: 6, y: 5, z: 0 } },
-        { id: 'marker7', panelId: 'panel7', position: { x: -20, y: 5, z: -27 } },
-        { id: 'marker8', panelId: 'panel8', position: { x: 32, y: 5, z: 0 } },
-        { id: 'marker10', panelId: 'panel10', position: { x: 14, y: 4, z: 4 } },
-        { id: 'marker11', panelId: 'panel11', position: { x: -5.6, y: 6, z: -16.5 } },
-        { id: 'marker12', panelId: 'panel12', position: { x: -6, y: 5, z: -26.5 } },
-        { id: 'marker13', panelId: 'panel13', position: { x: 14, y: 4, z: 8 } },
-        { id: 'marker14', panelId: 'panel14', position: { x: -2, y: 4, z: -33 } }
+        { id: 'marker1', panelId: 'panel1', position: { x: 1.5, y: 5, z: 1.5 }, img: './src/img/locationHover.png'},
+        { id: 'marker2', panelId: 'panel2', position: { x: 6, y: 6, z: 29 }, img: './src/img/locationHover.png'},
+        { id: 'marker3', panelId: 'panel3', position: { x: -30, y: 6, z: -1 }, img: './src/img/locationHover.png'},
+        { id: 'marker4', panelId: 'panel4', position: { x: -6.2, y: 6, z: 16 }, img: './src/img/locationHover.png'},
+        { id: 'marker5', panelId: 'panel5', position: { x: 27, y: 6, z: 27 }, img: './src/img/locationHover.png'},
+        { id: 'marker6', panelId: 'panel6', position: { x: 6, y: 5, z: 0 }, img: './src/img/locationHover.png'},
+        { id: 'marker7', panelId: 'panel7', position: { x: -20, y: 5, z: -27 }, img: './src/img/locationHover.png'},
+        { id: 'marker8', panelId: 'panel8', position: { x: 32, y: 5, z: 0 }, img: './src/img/locationHover.png'},
+        { id: 'marker10', panelId: 'panel10', position: { x: 14, y: 4, z: 4 }, img: './src/img/locationHover.png'},
+        { id: 'marker11', panelId: 'panel11', position: { x: -5.6, y: 6, z: -16.5 }, img: './src/img/locationHover.png'},
+        { id: 'marker12', panelId: 'panel12', position: { x: -6, y: 5, z: -26.5 }, img: './src/img/locationHover.png'},
+        { id: 'marker13', panelId: 'panel13', position: { x: 14, y: 4, z: 8 }, img: './src/img/locationHover.png'},
+        { id: 'marker14', panelId: 'panel14', position: { x: -2, y: 4, z: -33 }, img: './src/img/locationHover.png'}
     ];
 
     const vector = new THREE.Vector3();
@@ -105,7 +106,16 @@ export function marcadores(scene, camera) {
                 marcadorElement = document.createElement('div');
                 marcadorElement.className = 'marcador';
                 marcadorElement.id = marcador.id;
-                marcadorElement.innerText = marcador.id.replace('marker', '');
+
+                //Estilo para el marcador
+                const img = document.createElement('img');
+                const numeroMarcador = document.createElement('span');
+                img.src = marcador.img;
+                marcadorElement.appendChild(img);
+                numeroMarcador.innerText = marcador.id.replace('marker', '');
+                numeroMarcador.className = 'numero-marcador';
+                marcadorElement.appendChild(numeroMarcador);
+
                 contenedor.appendChild(marcadorElement);
 
                 marcadorElement.addEventListener('click', () => {

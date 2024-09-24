@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none; 
 }
 
 /* ------------------------ TODO ------------------------ */
@@ -225,7 +226,7 @@ header {
   font-size: 1.3rem;
   width: 20%;
   margin-left: 4rem;
-  transition: all 0.3s ease; 
+  transition: all 0.5s ease; 
 }
 
 header:hover .header-title::after {
@@ -346,18 +347,29 @@ header:hover img {
 
 .marcador {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #739072;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 20px;
-  color: #E0FBE2;
-  font-weight: bold;
+  width: 35px;
+  height: 25px;
   cursor: pointer;
   pointer-events: auto;
   opacity: 0.7;
   z-index: 3;
+}
+
+.numero-marcador {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #E0FBE2;
+  font-weight: bold;
+}
+
+.marcador img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .marcador:hover{
