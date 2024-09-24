@@ -3,23 +3,24 @@ import * as THREE from 'three';
 //----------- Paneles ------------
 export function interacciones() {
     document.addEventListener('DOMContentLoaded', function () {
-        const abrir = document.querySelectorAll('.abrir');
+        const abrir = document.querySelectorAll('[data-target]');
         const cerrar = document.querySelectorAll('.cerrar');
         const paneles = document.querySelectorAll('.panelDesplegable'); //Paneles de info
         const panel_menu = document.getElementById('panel_menu'); //Menu
+        const acercaDe = document.getElementById('acercaDe'); //AcercaDe
         const divInvisible = document.getElementById('divInvisible'); //Fondo negro
         let panelActualmenteAbierto = null;
 
         function actualizarDivInvisible() {
-            const algunPanelAbierto = Array.from(paneles).some(panel => panel.classList.contains('mostrar'));
-            if (algunPanelAbierto || panel_menu.classList.contains('mostrar')) {
+            const algunPanelAbierto = Array.from(paneles).some(panel => panel.classList.contains('mostrar')) || acercaDe.classList.contains('mostrar') || panel_menu.classList.contains('mostrar');
+            if (algunPanelAbierto) {
                 divInvisible.classList.add('mostrar');
             } else {
                 divInvisible.classList.remove('mostrar');
             }
         }
 
-        //Apertura de los paneles
+        //Apertura de los paneles con data-target
         abrir.forEach(boton => {
             boton.addEventListener('click', function () {
 
@@ -35,33 +36,29 @@ export function interacciones() {
                     panelActualmenteAbierto = targetPanel.classList.contains('mostrar') ? targetPanel : null;
                 }
 
-                if (panel_menu) {
-                    panel_menu.classList.add('mostrar');
-                }
-
                 actualizarDivInvisible();
             });
         });
 
+        //Apertura del menu
+        const abrirMenu = document.querySelector('#abrirMenu');
+        if (abrirMenu) {
+            abrirMenu.addEventListener('click', function () {
+                panel_menu.classList.toggle('mostrar');
+                actualizarDivInvisible();
+            });
+        }
+
         //Cierre de los paneles
         cerrar.forEach(boton => {
             boton.addEventListener('click', function () {
-                const panelDesplegable = this.closest('.panelDesplegable');
-                if (panelDesplegable) {
+                const panelDesplegable = this.closest('.panelDesplegable') || acercaDe;
+
+                if (this.closest('#panel_menu')){
+                    panel_menu.classList.remove('mostrar');
+                } else if (panelDesplegable) {
                     panelDesplegable.classList.remove('mostrar');
                     panelActualmenteAbierto = null;
-                }
-
-                let algunPanelAbierto = false;
-                paneles.forEach(panel => {
-                    if (panel.classList.contains('mostrar')) {
-                        algunPanelAbierto = true;
-                        panelActualmenteAbierto = panel;
-                    }
-                });
-
-                if (panel_menu) {
-                    panel_menu.classList.remove('mostrar');
                 }
 
                 actualizarDivInvisible();
@@ -72,6 +69,7 @@ export function interacciones() {
             paneles.forEach(panel => {
                 panel.classList.remove('mostrar');
             });
+            acercaDe.classList.remove('mostrar');
             panel_menu.classList.remove('mostrar');
             actualizarDivInvisible();
         });

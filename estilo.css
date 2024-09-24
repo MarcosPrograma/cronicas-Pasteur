@@ -223,7 +223,24 @@ header {
 
 .header-title {
   font-size: 1.3rem;
+  width: 20%;
   margin-left: 4rem;
+  transition: all 0.3s ease; 
+}
+
+header:hover .header-title::after {
+  content: "Marcos Juárez Agüero";
+  position: absolute;
+  font-size: 1.3rem;
+  color: #1E1E1E;
+}
+
+header:hover .header-title {
+  color: transparent;
+}
+
+header:hover img {
+  content: url('src/img/logo2.png');
 }
 
 .nav {
