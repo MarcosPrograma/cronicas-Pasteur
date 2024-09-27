@@ -23,7 +23,8 @@ body {
 }
 
 body {
-  background: #E0FBE2;
+  background: #B0EBB4;
+  background-image: linear-gradient(#B0EBB4, #E0FBE2);
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   overflow: hidden;
@@ -59,7 +60,7 @@ p {
 
 /* ------------------------ Pantalla de carga ------------------------ */
 #pantalla-carga {
-  background-color: #E0FBE2;
+  background: #BFF6C3;
   display: flex;
   flex-direction: column;
   justify-content: center;

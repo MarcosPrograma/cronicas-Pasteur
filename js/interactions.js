@@ -1,7 +1,8 @@
 import * as THREE from 'three';
+import { zoomInObjeto, zoomOutObjeto } from "/js/zoom.js";
 
 //----------- Paneles ------------
-export function interacciones() {
+export function interacciones(camera) {
     document.addEventListener('DOMContentLoaded', function () {
         const abrir = document.querySelectorAll('[data-target]');
         const cerrar = document.querySelectorAll('.cerrar');
@@ -59,8 +60,9 @@ export function interacciones() {
                 } else if (panelDesplegable) {
                     panelDesplegable.classList.remove('mostrar');
                     panelActualmenteAbierto = null;
-                }
 
+                    zoomOutObjeto(camera);
+                }
                 actualizarDivInvisible();
             });
         });
@@ -98,6 +100,7 @@ export function marcadores(scene, camera) {
     ];
 
     const vector = new THREE.Vector3();
+    const marcadoresPosiciones = {};
 
     function actualizarMarcadorPosicion() {
         marcadores.forEach(marcador => {
@@ -119,13 +122,15 @@ export function marcadores(scene, camera) {
                 contenedor.appendChild(marcadorElement);
 
                 marcadorElement.addEventListener('click', () => {
-
                     const panel = document.getElementById(marcador.panelId);
                     document.querySelectorAll('.panelDesplegable').forEach(p => p.classList.remove('mostrar'));
                     if (panel) {
                         panel.classList.add('mostrar');
                         divInvisible.classList.add('mostrar');
                     }
+
+                    const targetPosition = new THREE.Vector3(marcador.position.x, marcador.position.y, marcador.position.z);
+                    zoomInObjeto(camera, targetPosition, 1000);
                 });
             }
 
@@ -135,7 +140,17 @@ export function marcadores(scene, camera) {
             const x = (vector.x * 0.5 + 0.5) * window.innerWidth;
             const y = (vector.y * -0.5 + 0.5) * window.innerHeight;
 
-            marcadorElement.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+            //guardar posiciones de los marcadores
+            if(!marcadoresPosiciones[marcador.id]){
+                marcadoresPosiciones[marcador.id] = {x, y};
+            }   
+
+            //*intento* suavizado para que no salte con el zoom *tos* no funciona del todo *tos*
+            const posicionPrevia = marcadoresPosiciones[marcador.id];
+            posicionPrevia.x = THREE.MathUtils.lerp(posicionPrevia.x, x, 0.4);
+            posicionPrevia.y = THREE.MathUtils.lerp(posicionPrevia.y, y, 0.4);
+
+            marcadorElement.style.transform = `translate(-50%, -50%) translate(${posicionPrevia.x}px, ${posicionPrevia.y}px)`;
         });
     }
 

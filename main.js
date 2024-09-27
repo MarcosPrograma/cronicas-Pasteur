@@ -41,7 +41,7 @@ setearLuces(scene);
 setearRaycaster(camera, scene);
 
 //Interaccion
-interacciones();
+interacciones(camera);
 iniciarCarrusel();
 stepper();
 

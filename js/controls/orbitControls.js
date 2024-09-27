@@ -48,8 +48,8 @@ class OrbitControls extends EventDispatcher {
         //Control de distancias para el zoom
 		//this.minDistance = 0;
 		//this.maxDistance = 1000;
-		this.minDistance = 22;
-		this.maxDistance = 70;
+		this.minDistance = 0;
+		this.maxDistance = Infinity;
 
 		// How far you can zoom in and out ( OrthographicCamera only )
 		this.minZoom = 0;
@@ -63,7 +63,7 @@ class OrbitControls extends EventDispatcher {
 		// Range is 0 to Math.PI radians.
 		this.minPolarAngle = 0; // radians
 		//this.maxPolarAngle = Math.PI; // radians
-		this.maxPolarAngle = Math.PI * 0.45;
+		this.maxPolarAngle = Math.PI;
 
 		// How far you can orbit horizontally, upper and lower limits.
 		// If set, the interval [ min, max ] must be a sub-interval of [ - 2 PI, 2 PI ], with ( max - min < 2 PI )
@@ -72,23 +72,23 @@ class OrbitControls extends EventDispatcher {
 
 		// Set to true to enable damping (inertia)
 		// If damping is enabled, you must call controls.update() in your animation loop
-		this.enableDamping = true;
-		this.dampingFactor = 0.06;
+		this.enableDamping = false;
+		this.dampingFactor = 0.05;
 
 		// This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
 		// Set to false to disable zooming
 		this.enableZoom = true;
-		this.zoomSpeed = 1.2;
+		this.zoomSpeed = 1.0;
 
 		// Set to false to disable rotating
 		this.enableRotate = true;
-		this.rotateSpeed = 0.8;
+		this.rotateSpeed = 1.0;
 
 		// Set to false to disable panning
         //Control de paneo
-		this.enablePan = false;
-		this.panSpeed = 0.8;
-		this.screenSpacePanning = false; // if false, pan orthogonal to world-space direction camera.up
+		this.enablePan = true;
+		this.panSpeed = 1.0;
+		this.screenSpacePanning = true; // if false, pan orthogonal to world-space direction camera.up
 		this.keyPanSpeed = 7.0;	// pixels moved per arrow key push
 		this.zoomToCursor = false;
 
