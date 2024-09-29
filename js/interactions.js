@@ -10,7 +10,7 @@ export function interacciones(camera) {
         const panel_menu = document.getElementById('panel_menu'); //Menu
         const acercaDe = document.getElementById('acercaDe'); //AcercaDe
         const divInvisible = document.getElementById('divInvisible'); //Fondo negro
-        let panelActualmenteAbierto = null;
+        let panelActualmenteAbierto = null; 
 
         function actualizarDivInvisible() {
             const algunPanelAbierto = Array.from(paneles).some(panel => panel.classList.contains('mostrar')) || acercaDe.classList.contains('mostrar') || panel_menu.classList.contains('mostrar');
@@ -28,13 +28,16 @@ export function interacciones(camera) {
                 const targetId = this.getAttribute('data-target');
                 const targetPanel = document.getElementById(targetId);
 
+                //si hay otro panel abierto, lo cierra
                 if (panelActualmenteAbierto && panelActualmenteAbierto !== targetPanel) {
                     panelActualmenteAbierto.classList.remove('mostrar');
+                    panelActualmenteAbierto.scrollTop = 0;
                 }
 
                 if (targetPanel) {
                     targetPanel.classList.toggle('mostrar');
                     panelActualmenteAbierto = targetPanel.classList.contains('mostrar') ? targetPanel : null;
+                    targetPanel.scrollTop = 0;
                 }
 
                 actualizarDivInvisible();
@@ -46,6 +49,9 @@ export function interacciones(camera) {
         if (abrirMenu) {
             abrirMenu.addEventListener('click', function () {
                 panel_menu.classList.toggle('mostrar');
+                if(panel_menu.classList.contains('mostrar')){
+                    panel_menu.scrollTop = 0;
+                }
                 actualizarDivInvisible();
             });
         }
@@ -57,8 +63,10 @@ export function interacciones(camera) {
 
                 if (this.closest('#panel_menu')){
                     panel_menu.classList.remove('mostrar');
+                    panel_menu.scrollTop = 0;
                 } else if (panelDesplegable) {
                     panelDesplegable.classList.remove('mostrar');
+                    panelDesplegable.scrollTop = 0;
                     panelActualmenteAbierto = null;
 
                     zoomOutObjeto(camera);
@@ -70,10 +78,51 @@ export function interacciones(camera) {
         divInvisible.addEventListener('click', function () {
             paneles.forEach(panel => {
                 panel.classList.remove('mostrar');
+                panel.scrollTop = 0;
             });
             acercaDe.classList.remove('mostrar');
+            acercaDe.scrollTop = 0;
             panel_menu.classList.remove('mostrar');
+            panel_menu.scrollTop = 0;
             actualizarDivInvisible();
+        });
+
+        //-------- swipe -------- 
+        let touchStartX = 0;
+        let touchEndX = 0; 
+
+        function swipe(){
+            if(touchEndX < touchStartX - 50){ //swipe a la izquierda
+                paneles.forEach(panel =>{ 
+                    if (panel.classList.contains('mostrar')){
+                        panel.classList.remove('mostrar');
+                        panel.scrollTop = 0;
+                    }
+                });
+                panelActualmenteAbierto = null;
+                actualizarDivInvisible();
+            } else if (touchEndX > touchStartX + 50 ){ //swipe a la derecha
+                if(panel_menu.classList.contains('mostrar')){
+                    panel_menu.classList.remove('mostrar');
+                    panel_menu.scrollTop = 0;
+                }
+                if(acercaDe.classList.contains('mostrar')){
+                    acercaDe.classList.remove('mostrar');
+                    acercaDe.scrollTop = 0;
+                }
+                actualizarDivInvisible();
+            }
+        }
+
+        // deteccion del incio del toque
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        // deteccion del final del toque
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            swipe();
         });
     });
 }
@@ -90,8 +139,9 @@ export function marcadores(scene, camera) {
         { id: 'marker4', panelId: 'panel4', position: { x: -6.2, y: 6, z: 16 }, img: './src/img/locationHover.png'},
         { id: 'marker5', panelId: 'panel5', position: { x: 27, y: 6, z: 27 }, img: './src/img/locationHover.png'},
         { id: 'marker6', panelId: 'panel6', position: { x: 6, y: 5, z: 0 }, img: './src/img/locationHover.png'},
-        { id: 'marker7', panelId: 'panel7', position: { x: -20, y: 5, z: -27 }, img: './src/img/locationHover.png'},
+        { id: 'marker7', panelId: 'panel7', position: { x: -24, y: 4, z: -27 }, img: './src/img/locationHover.png'},
         { id: 'marker8', panelId: 'panel8', position: { x: 32, y: 5, z: 0 }, img: './src/img/locationHover.png'},
+        { id: 'marker9', panelId: 'panel9', position: { x: -22, y: 6, z: -31 }, img: './src/img/locationHover.png'},
         { id: 'marker10', panelId: 'panel10', position: { x: 14, y: 4, z: 4 }, img: './src/img/locationHover.png'},
         { id: 'marker11', panelId: 'panel11', position: { x: -5.6, y: 6, z: -16.5 }, img: './src/img/locationHover.png'},
         { id: 'marker12', panelId: 'panel12', position: { x: -6, y: 5, z: -26.5 }, img: './src/img/locationHover.png'},

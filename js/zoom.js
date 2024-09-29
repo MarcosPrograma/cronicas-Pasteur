@@ -8,12 +8,16 @@ export function zoomInObjeto(camera, targetPosition, duration = 1000){
     const startPosition = new THREE.Vector3().copy(camera.position);
     const direction = new THREE.Vector3().subVectors(targetPosition, camera.position).normalize();
     
-    const distancia = 10; //ajustable para controlar que tan cerca queda la camara 
+    const distancia = 4; //ajustable para controlar que tan cerca queda la camara 
     
     const endPosition = new THREE.Vector3().copy(targetPosition).sub(direction.multiplyScalar(distancia));
-    const alturaAjustada = 4;
+    
+    /*
+    const alturaAjustada = 3;
     endPosition.y = targetPosition.y + alturaAjustada;
     endPosition.x = targetPosition.x + alturaAjustada;
+    endPosition.z = targetPosition.z + alturaAjustada;
+    */
 
     const startTime = performance.now();
 
